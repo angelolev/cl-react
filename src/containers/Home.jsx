@@ -7,7 +7,6 @@ import "../styles.scss";
 
 const Home = () => {
   const [recommendedCourses, setRecommendedCourses] = useState([]);
-  const fileSrc = "../assets/js/script.js";
 
   useEffect(() => {
     fetch("https://coding-latam.firebaseio.com/recommendedCourses.json").then(

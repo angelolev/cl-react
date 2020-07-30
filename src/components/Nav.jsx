@@ -5,7 +5,7 @@ const Nav = () => (
     <div className="container">
       <div className="nav__content">
         <div className="nav__top">
-          <div className="nav__logo" id="burger" onclick="toggleMenu()">
+          <div className="nav__logo" id="burger">
             <img src="./images/logo.png" alt="" />
             <span>Coding Latam</span>
           </div>
