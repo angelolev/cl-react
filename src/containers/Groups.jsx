@@ -50,7 +50,6 @@ const Groups = () => {
       <section className="groups-description">
         <ul className="groups-tags">
           {categories.map((category) => {
-            console.log(category, "categpria");
             return <CategoryGroups key={category.id} name={category.name} />;
           })}
         </ul>

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import JoinUs from "../components/JoinUs";
 import Header from "../components/Header";
 import RecommendedCourses from "../components/RecommendedCourses";
-// import importScript from "../hooks/importScripts";
 
 import "../styles.scss";
 

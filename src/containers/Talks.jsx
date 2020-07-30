@@ -24,15 +24,15 @@ const Talks = () => {
 
   return (
     <div>
-      <header class="groups-header">
-        <div class="groups-header__image">
+      <header className="groups-header">
+        <div className="groups-header__image">
           <img src="/images/laptop.webp" alt="" />
         </div>
-        <div class="groups-header__text">
+        <div className="groups-header__text">
           <h1>Conoce las próximas actividades de la comunidad</h1>
         </div>
       </header>
-      <section class="talks">
+      <section className="talks">
         {talks.map((talk) => {
           return (
             <Talk

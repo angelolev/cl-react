@@ -4,14 +4,14 @@ const Talk = (props) => {
   const talkButtonText = "Agregar a calendario";
 
   return (
-    <div class="talk">
-      <div class="talk__image">
+    <div className="talk">
+      <div className="talk__image">
         <img src={props.image} alt="" />
       </div>
-      <div class="talk__description">
+      <div className="talk__description">
         <h3>{props.description}</h3>
         <p>{props.date}</p>
-        <a class="talk__link" href={props.link}>
+        <a className="talk__link" href={props.link}>
           {talkButtonText}
         </a>
       </div>

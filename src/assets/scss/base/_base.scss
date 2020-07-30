@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   transform: perspective(1px) translateZ(0);
   transition-duration: 0.3s;
