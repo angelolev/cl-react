@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/cl-react/static/css/main.adf5974b.chunk.css",
-    "main.js": "/cl-react/static/js/main.f6189b76.chunk.js",
-    "main.js.map": "/cl-react/static/js/main.f6189b76.chunk.js.map",
-    "runtime-main.js": "/cl-react/static/js/runtime-main.fb4dc492.js",
-    "runtime-main.js.map": "/cl-react/static/js/runtime-main.fb4dc492.js.map",
-    "static/js/2.21381c98.chunk.js": "/cl-react/static/js/2.21381c98.chunk.js",
-    "static/js/2.21381c98.chunk.js.map": "/cl-react/static/js/2.21381c98.chunk.js.map",
-    "index.html": "/cl-react/index.html",
-    "precache-manifest.848cadfdf25b6f82984ea97424659c56.js": "/cl-react/precache-manifest.848cadfdf25b6f82984ea97424659c56.js",
-    "service-worker.js": "/cl-react/service-worker.js",
-    "static/css/main.adf5974b.chunk.css.map": "/cl-react/static/css/main.adf5974b.chunk.css.map",
-    "static/js/2.21381c98.chunk.js.LICENSE.txt": "/cl-react/static/js/2.21381c98.chunk.js.LICENSE.txt",
-    "static/media/styles.scss": "/cl-react/static/media/wave2.32a088df.svg"
+    "main.css": "https://angelolev.github.io/cl-react/static/css/main.89277576.chunk.css",
+    "main.js": "https://angelolev.github.io/cl-react/static/js/main.f53f9da4.chunk.js",
+    "main.js.map": "https://angelolev.github.io/cl-react/static/js/main.f53f9da4.chunk.js.map",
+    "runtime-main.js": "https://angelolev.github.io/cl-react/static/js/runtime-main.c680e5a2.js",
+    "runtime-main.js.map": "https://angelolev.github.io/cl-react/static/js/runtime-main.c680e5a2.js.map",
+    "static/js/2.21381c98.chunk.js": "https://angelolev.github.io/cl-react/static/js/2.21381c98.chunk.js",
+    "static/js/2.21381c98.chunk.js.map": "https://angelolev.github.io/cl-react/static/js/2.21381c98.chunk.js.map",
+    "index.html": "https://angelolev.github.io/cl-react/index.html",
+    "precache-manifest.7862584817fdc2d1f7f09ed545a52d8a.js": "https://angelolev.github.io/cl-react/precache-manifest.7862584817fdc2d1f7f09ed545a52d8a.js",
+    "service-worker.js": "https://angelolev.github.io/cl-react/service-worker.js",
+    "static/css/main.89277576.chunk.css.map": "https://angelolev.github.io/cl-react/static/css/main.89277576.chunk.css.map",
+    "static/js/2.21381c98.chunk.js.LICENSE.txt": "https://angelolev.github.io/cl-react/static/js/2.21381c98.chunk.js.LICENSE.txt",
+    "static/media/styles.scss": "https://angelolev.github.io/cl-react/static/media/wave2.32a088df.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.fb4dc492.js",
+    "static/js/runtime-main.c680e5a2.js",
     "static/js/2.21381c98.chunk.js",
-    "static/css/main.adf5974b.chunk.css",
-    "static/js/main.f6189b76.chunk.js"
+    "static/css/main.89277576.chunk.css",
+    "static/js/main.f53f9da4.chunk.js"
   ]
 }
