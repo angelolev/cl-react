@@ -10,6 +10,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center center;
+
+    @include breakpoint($md) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
@@ -23,11 +27,20 @@
       max-width: 250px;
     }
 
+    @include breakpoint($md) {
+      margin: 0 auto 20px;
+      max-width: 100%;
+    }
+
     .item__image {
       width: 30%;
 
       @include breakpoint($sm) {
         width: 40%;
+      }
+
+      @include breakpoint($md) {
+        width: 30%;
       }
 
       img {
@@ -40,6 +53,10 @@
 
       @include breakpoint($sm) {
         width: 60%;
+      }
+
+      @include breakpoint($md) {
+        width: 70%;
       }
 
       a {
