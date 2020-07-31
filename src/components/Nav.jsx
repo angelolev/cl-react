@@ -41,7 +41,7 @@ const Nav = () => (
         </div>
         <div className="nav__bottom">
           <ul className="nav__menu fadeIn" id="navMenu">
-            <button id="navClose" onclick="toggleMenu()">
+            <button id="navClose" onClick="toggleMenu()">
               X
             </button>
             <li>

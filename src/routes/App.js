@@ -5,6 +5,7 @@ import Groups from "../containers/Groups";
 import Talks from "../containers/Talks";
 import Layout from "../components/Layout";
 import Dashboard from "../containers/Dashboard";
+import Live from "../containers/Live/Live";
 // import Cursos from "../containers/Cursos";
 // import Proyectos from "../containers/Proyectos";
 
@@ -14,7 +15,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/dashboard" component={Dashboard} />
-        {/* <Route exact path="/cursos" component={Cursos} /> */}
+        <Route exact path="/live" component={Live} />
         <Route exact path="/grupos" component={Groups} />
         <Route exact path="/talks" component={Talks} />
         {/* <Route exact path="/proyectos" component={Proyectos} /> */}

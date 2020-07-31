@@ -3,23 +3,33 @@ import { Link } from "react-router-dom";
 
 const AsideNavigation = () => {
   return (
-    <aside className="aside-navigation">
-      <h2>Navegación</h2>
-      <ul>
+    <aside className="asideNavigation">
+      <h3>Navegación</h3>
+      <ul className="asideNavigation__list">
         <li>
-          <Link to="/dashboard">Home</Link>
+          <Link className="asideNavigation__item" to="/dashboard">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/cursos">Cursos</Link>
+          <Link className="asideNavigation__item" to="/cursos">
+            Cursos
+          </Link>
         </li>
         <li>
-          <Link to="/talks">Talks</Link>
+          <Link className="asideNavigation__item" to="/talks">
+            Talks
+          </Link>
         </li>
         <li>
-          <Link to="/proyectos">Proyectos</Link>
+          <Link className="asideNavigation__item" to="/proyectos">
+            Proyectos
+          </Link>
         </li>
         <li>
-          <Link to="/grupos">Grupos</Link>
+          <Link className="asideNavigation__item" to="/grupos">
+            Grupos
+          </Link>
         </li>
       </ul>
     </aside>

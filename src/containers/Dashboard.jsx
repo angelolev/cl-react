@@ -6,11 +6,13 @@ import Articles from "../components/dashboard/Articles/Articles";
 
 const Dashboard = () => {
   return (
-    <main className="dashboard">
-      <AsideNavigation />
-      <SocialArea />
-      <Articles />
-    </main>
+    <div className="container">
+      <main className="dashboard">
+        <AsideNavigation />
+        <SocialArea />
+        <Articles />
+      </main>
+    </div>
   );
 };
 
