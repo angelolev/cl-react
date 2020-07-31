@@ -17,7 +17,7 @@ const AsideNavigation = () => {
           </Link>
         </li>
         <li>
-          <Link className="asideNavigation__item" to="/talks">
+          <Link className="asideNavigation__item" to="/lasttalks">
             Talks
           </Link>
         </li>

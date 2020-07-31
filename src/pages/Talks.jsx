@@ -24,6 +24,14 @@ const Talks = () => {
 
   return (
     <div>
+      <header className="groups-header">
+        <div className="groups-header__image">
+          <img src="/images/laptop.webp" alt="" />
+        </div>
+        <div className="groups-header__text">
+          <h1>Conoce las próximas actividades de la comunidad</h1>
+        </div>
+      </header>
       <section className="talks">
         {talks.map((talk) => {
           return (
