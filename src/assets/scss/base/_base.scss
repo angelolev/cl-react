@@ -10,7 +10,7 @@ a {
   transform: perspective(1px) translateZ(0);
   transition-duration: 0.3s;
 
-  &:hover {
+  &.btn:hover {
     box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
   }
 }

@@ -28,10 +28,16 @@
 
         a {
           color: $color-blue-dark;
+          transition: border 0.3s;
 
           &:hover {
             box-shadow: none;
+            padding-bottom: 25px;
+            border-bottom: 2px solid $color-blue-dark;
+            transition: border 0.3s;
           }
+
+
         }
       }
     }

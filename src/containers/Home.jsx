@@ -3,8 +3,6 @@ import JoinUs from "../components/JoinUs";
 import Header from "../components/Header";
 import RecommendedCourses from "../components/RecommendedCourses";
 
-import "../styles.scss";
-
 const Home = () => {
   const [recommendedCourses, setRecommendedCourses] = useState([]);
 
