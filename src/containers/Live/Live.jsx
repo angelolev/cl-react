@@ -6,7 +6,7 @@ const Live = () => {
   return (
     <div className="container">
       <section className="live">
-        <LiveVideo />
+        {/* <LiveVideo /> */}
         <LastTalks />
       </section>
     </div>
