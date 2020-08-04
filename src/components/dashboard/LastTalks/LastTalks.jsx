@@ -6,7 +6,7 @@ const LastTalks = () => {
   const [talks, setTalks] = useState([]);
 
   useEffect(() => {
-    db.collection("talks").orderBy("id","desc").limit(4).get().then((querySnapshot) => {
+    db.collection("talks").orderBy("id","desc").limit(2).get().then((querySnapshot) => {
       const lastTalks = [];
       querySnapshot.forEach((doc) => {
         lastTalks.push(doc.data());

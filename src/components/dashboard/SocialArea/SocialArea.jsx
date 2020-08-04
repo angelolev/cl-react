@@ -7,6 +7,9 @@ const SocialArea = () => {
   return (
     <div className="social-area">
       <h1>social area</h1>
+      {/* <LastCourses />
+      <LastTalks />
+      <LastGroups /> */}
     </div>
   );
 };
