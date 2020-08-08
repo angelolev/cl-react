@@ -1,40 +1,36 @@
 import React, { useState, useEffect } from "react";
 import CategoryGroups from "../components/CategoryGroup";
 import StudyGroup from "../components/StudyGroup";
+import { db } from "../services/firebase";
 
 const Groups = () => {
   const [categories, setCategories] = useState([]);
   const [groups, setGroups] = useState([]);
 
   useEffect(() => {
-    fetch("https://coding-latam.firebaseio.com/categories.json").then(
-      (response) =>
-        response.json().then((responseData) => {
-          const loadedCategories = [];
-          for (const key in responseData) {
-            loadedCategories.push({
-              id: key,
-              name: responseData[key].name,
-            });
-          }
-          setCategories(loadedCategories);
-        })
-    );
+    db.collection("categories")
+      .get()
+      .then((querySnapshot) => {
+        const loadedCategories = [];
+        querySnapshot.forEach((doc) => {
+          const currentDoc = doc.data();
+          currentDoc.id = doc.id;
+          loadedCategories.push(currentDoc);
+        });
+        setCategories(loadedCategories);
+      });
 
-    fetch("https://coding-latam.firebaseio.com/groups.json").then((response) =>
-      response.json().then((responseData) => {
+    db.collection("groups")
+      .get()
+      .then((querySnapshot) => {
         const loadedGroups = [];
-        for (const key in responseData) {
-          loadedGroups.push({
-            id: key,
-            name: responseData[key].name,
-            description: responseData[key].description,
-            image: responseData[key].image,
-          });
-        }
+        querySnapshot.forEach((doc) => {
+          const currentDoc = doc.data();
+          currentDoc.id = doc.id;
+          loadedGroups.push(currentDoc);
+        });
         setGroups(loadedGroups);
-      })
-    );
+      });
   }, []);
 
   return (

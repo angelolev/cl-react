@@ -1,25 +1,22 @@
 import React, { useState, useEffect } from "react";
 import Talk from "../components/Talk";
+import { db } from "../services/firebase";
 
 const Talks = () => {
   const [talks, setTalks] = useState([]);
 
   useEffect(() => {
-    fetch("https://coding-latam.firebaseio.com/talks.json").then((response) =>
-      response.json().then((responseData) => {
+    db.collection("talks")
+      .get()
+      .then((querySnapshot) => {
         const loadedTalks = [];
-        for (const key in responseData) {
-          loadedTalks.push({
-            id: key,
-            description: responseData[key].description,
-            date: responseData[key].date,
-            calendarLink: responseData[key].calendarLink,
-            image: responseData[key].image,
-          });
-        }
+        querySnapshot.forEach((doc) => {
+          const currentDoc = doc.data();
+          currentDoc.id = doc.id;
+          loadedTalks.push(currentDoc);
+        });
         setTalks(loadedTalks);
-      })
-    );
+      });
   }, []);
 
   return (
