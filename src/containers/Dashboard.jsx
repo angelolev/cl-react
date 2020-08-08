@@ -13,7 +13,11 @@ const Dashboard = () => {
           <AsideNavigation />
           <Switch>
             <Route exact path="/dashboard" component={SocialArea} />
-            <Route exact path="/lasttalks" component={Talks} />
+            <Route
+              exact
+              path="/dashboard/lasttalks"
+              component={() => <Talks isDashboard="" />}
+            />
           </Switch>
           <Articles />
         </BrowserRouter>

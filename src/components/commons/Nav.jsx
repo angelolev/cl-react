@@ -41,9 +41,7 @@ const Nav = () => (
         </div>
         <div className="nav__bottom">
           <ul className="nav__menu fadeIn" id="navMenu">
-            <button id="navClose" onClick="toggleMenu()">
-              X
-            </button>
+            <button id="navClose">X</button>
             <li>
               <a className="scrollable" href="#join">
                 Únete
