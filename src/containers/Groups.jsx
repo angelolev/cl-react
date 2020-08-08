@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import CategoryGroups from "../components/CategoryGroup";
-import StudyGroup from "../components/StudyGroup";
+import CategoryGroups from "../components/commons/CategoryGroup";
+import StudyGroup from "../components/commons/StudyGroup";
 import { db } from "../services/firebase";
 
 const Groups = () => {

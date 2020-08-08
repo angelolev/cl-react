@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import JoinUs from "../components/JoinUs";
-import Header from "../components/Header";
-import RecommendedCourses from "../components/RecommendedCourses";
+import JoinUs from "../components/landing/JoinUs";
+import Header from "../components/commons/Header";
+import RecommendedCourses from "../components/commons/RecommendedCourses";
 import { db } from "../services/firebase";
 
 const Home = () => {

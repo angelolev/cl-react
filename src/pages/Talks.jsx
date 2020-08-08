@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Talk from "../components/Talk";
+import Talk from "../components/commons/Talk";
 
 const Talks = () => {
   const [talks, setTalks] = useState([]);
