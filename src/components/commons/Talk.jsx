@@ -4,7 +4,7 @@ const Talk = (props) => {
   const talkButtonText = "Agregar a calendario";
 
   return (
-    <div className="talk">
+    <div className={props.classname}>
       <div className="talk__image">
         <img src={props.image} alt="" />
       </div>
