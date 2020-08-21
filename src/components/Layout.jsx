@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from "./Nav";
-import Footer from "./Footer";
+import Nav from "./commons/Nav";
+import Footer from "./commons/Footer";
 
 const Layout = ({ children }) => (
   <div className="app">

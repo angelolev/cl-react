@@ -1,16 +1,26 @@
 import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import SocialArea from "../components/dashboard/SocialArea/SocialArea";
 import AsideNavigation from "../components/dashboard/AsideNavigation";
 import Articles from "../components/dashboard/Articles/Articles";
-// import Money from "../components/dashboard/Money";
+import Talks from "../containers/Talks";
 
 const Dashboard = () => {
   return (
     <div className="container">
       <main className="dashboard">
-        <AsideNavigation />
-        <SocialArea />
-        <Articles />
+        <BrowserRouter>
+          <AsideNavigation />
+          <Switch>
+            <Route exact path="/dashboard" component={SocialArea} />
+            <Route
+              exact
+              path="/dashboard/lasttalks"
+              component={() => <Talks isDashboard="" />}
+            />
+          </Switch>
+          <Articles />
+        </BrowserRouter>
       </main>
     </div>
   );

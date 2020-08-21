@@ -12,22 +12,22 @@ const AsideNavigation = () => {
           </Link>
         </li>
         <li>
-          <Link className="asideNavigation__item" to="/cursos">
+          <Link className="asideNavigation__item" to="/dashboard/cursos">
             Cursos
           </Link>
         </li>
         <li>
-          <Link className="asideNavigation__item" to="/talks">
+          <Link className="asideNavigation__item" to="/dashboard/lasttalks">
             Talks
           </Link>
         </li>
         <li>
-          <Link className="asideNavigation__item" to="/proyectos">
+          <Link className="asideNavigation__item" to="/dashboard/proyectos">
             Proyectos
           </Link>
         </li>
         <li>
-          <Link className="asideNavigation__item" to="/grupos">
+          <Link className="asideNavigation__item" to="/dashboard/grupos">
             Grupos
           </Link>
         </li>

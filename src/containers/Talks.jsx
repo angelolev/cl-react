@@ -1,37 +1,35 @@
 import React, { useState, useEffect } from "react";
-import Talk from "../components/Talk";
+import Talk from "../components/commons/Talk";
+import HeaderSection from "../components/commons/HeaderSection";
+import { db } from "../services/firebase";
 
-const Talks = () => {
+const Talks = (props) => {
   const [talks, setTalks] = useState([]);
+  const [isDashboard, setIsDashboard] = useState(props.isDashboard);
+  let talkClass = "talk";
+
+  if (!isDashboard) {
+    talkClass += " talk-dashboard";
+  }
 
   useEffect(() => {
-    fetch("https://coding-latam.firebaseio.com/talks.json").then((response) =>
-      response.json().then((responseData) => {
+    db.collection("talks")
+      .get()
+      .then((querySnapshot) => {
         const loadedTalks = [];
-        for (const key in responseData) {
-          loadedTalks.push({
-            id: key,
-            description: responseData[key].description,
-            date: responseData[key].date,
-            calendarLink: responseData[key].calendarLink,
-            image: responseData[key].image,
-          });
-        }
+        querySnapshot.forEach((doc) => {
+          const currentDoc = doc.data();
+          currentDoc.id = doc.id;
+          loadedTalks.push(currentDoc);
+        });
         setTalks(loadedTalks);
-      })
-    );
+      });
   }, []);
 
   return (
     <div>
-      <header className="groups-header">
-        <div className="groups-header__image">
-          <img src="/images/laptop.webp" alt="" />
-        </div>
-        <div className="groups-header__text">
-          <h1>Conoce las próximas actividades de la comunidad</h1>
-        </div>
-      </header>
+      {isDashboard ? <HeaderSection /> : ""}
+
       <section className="talks">
         {talks.map((talk) => {
           return (
@@ -41,6 +39,7 @@ const Talks = () => {
               date={talk.date}
               link={talk.calendarLink}
               image={talk.image}
+              classname={talkClass}
             />
           );
         })}
