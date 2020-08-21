@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+body {
+  background: #f5f5f5;
+  color: #2c3e50;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav {
+  background-color: #2c3e50;
+}
+
+nav ul {
+  list-style: none;
+  justify-content: space-evenly;
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+nav ul li {
+  justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+a {
+  color: #f5f5f5;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+
+a:hover {
+  color: #fbc531;
+  transition: 0.3s all;
+}
+
+h2 {
+  margin: 50px 0 10px;
+}
+
+sup {
+  background-color: #2c3e50;
+  color: #f5f5f5;
+  border-radius: 10px;
+  padding: 5px 15px;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.container {
+  margin: 20px;
+  padding: 10px;
+  background-color: #fbc531;
+  display: flex;
+
+}
+
+.container2 {
+  margin: 20px;
+  padding: 10px;
+  height: 300px;
+  background-color: #fbc531;
+  display: flex;
+}
+
+.box {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+}
+
+.box2 {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 10px;
+  width: 100px;
+}
+
+.box3 {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+}
+
+.box4 {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 10px;
+  width: 100px;
+}
+
+.center {
+  align-self: center;
+}
+
+.end {
+  align-self: flex-end;
+}
+
+.primero {
+  order: -1;
+}
+
+.ultimo {
+  order: 1;
+}
+
+.f1 {
+  flex: 1;
+}
+
+.f2 {
+  flex: 2;
+}
+
+.A {
+  justify-content: flex-start;
+}
+
+.B {
+  justify-content: flex-end;
+}
+
+.C {
+  justify-content: center;
+}
+
+.D {
+  justify-content: space-between;
+}
+
+.E {
+  justify-content: space-around;
+}
+
+.F {
+  justify-content: space-evenly;
+}
+
+.G {
+  align-items: flex-start;
+}
+
+.H {
+  align-items: flex-end;
+}
+
+.I {
+  align-items: center;
+}
+
+.J {
+  align-items: stretch;
+}
+
+.K {
+  align-items: baseline;
+}
+
+.a {
+  flex-direction: row;
+}
+
+.b {
+  flex-direction: row-reverse;
+}
+
+.c {
+  flex-direction: column;
+}
+
+.d {
+  flex-direction: column-reverse;
+}
+
+.e {
+  flex-wrap: nowrap;
+}
+
+.f {
+  flex-wrap: wrap;
+}
+
+.g {
+  flex-wrap: wrap-reverse;
+}
+
+.h {
+  flex-flow: row-reverse wrap;
+}
+
+.i {
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.j {
+  flex-wrap: wrap;
+  align-content: flex-end;
+}
+
+.k {
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.l {
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+.m {
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+.n {
+  flex-wrap: wrap;
+  align-content: stretch;
+}
