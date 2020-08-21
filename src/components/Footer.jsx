@@ -34,7 +34,7 @@ const Footer = () => (
         </a>
         <a
           target="_blank"
-          href="https://www.youtube.com/channel/UCPcMiIKT4RJboN9Hx2pajoA"
+          href="https://www.youtube.com/channel/UCS0emIw9cgv9RIMowHlq3ng"
           rel="noopener noreferrer"
         >
           <span className="icon icon-youtube"></span>

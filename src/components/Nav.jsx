@@ -1,12 +1,21 @@
 import React from "react";
 
+const goToHome = () => {
+  window.location.href = "/";
+};
+
+const showMenu = () => {
+  let navMenu = document.getElementById("navMenu");
+  navMenu.classList.toggle("show");
+};
+
 const Nav = () => (
   <nav className="nav">
     <div className="container">
       <div className="nav__content">
         <div className="nav__top">
           <div className="nav__logo" id="burger">
-            <img src="./images/logo.png" alt="" />
+            <img src="./images/logo.png" alt="" onClick={goToHome} />
             <span>Coding Latam</span>
           </div>
           <div className="nav__links">
@@ -34,14 +43,14 @@ const Nav = () => (
             </ul>
           </div>
           <div className="nav__button">
-            <a className="btn yellow scrollable" href="#join">
-              Únete
+            <a className="btn yellow scrollable" onClick={showMenu}>
+              Menú
             </a>
           </div>
         </div>
         <div className="nav__bottom">
           <ul className="nav__menu fadeIn" id="navMenu">
-            <button id="navClose" onClick="toggleMenu()">
+            <button id="navClose" onClick={showMenu}>
               X
             </button>
             <li>
