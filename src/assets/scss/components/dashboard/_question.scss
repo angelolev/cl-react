@@ -1,0 +1,25 @@
+.question {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0 20px;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  h4 {
+    margin-bottom: 20px;
+  }
+
+  &__comments {
+    margin-right: 20px;
+  }
+
+  &__likes {
+    margin-right: 20px;
+  }
+
+  &__join {
+    color: $color-blue-dark;
+    font-size: 12px;
+  }
+}

@@ -26,6 +26,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-buymeacoffee:before {
+  content: "\e902";
+}
+.icon-patreon:before {
+  content: "\e903";
+}
+.icon-like:before {
+  content: "\e901";
+}
+.icon-comment:before {
+  content: "\e900";
+}
 .icon-phone:before {
   content: "\e942";
 }

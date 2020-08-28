@@ -1,0 +1,7 @@
+.left-navigation {
+  width: 100%;
+
+  @include breakpoint($md) {
+    width: 20%;
+  }
+}

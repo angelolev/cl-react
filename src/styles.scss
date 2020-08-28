@@ -19,12 +19,20 @@
 @import "./assets/scss/components/groups-description";
 @import "./assets/scss/components/group";
 @import "./assets/scss/components/talk";
+@import "./assets/scss/components/announcement";
 
 // Dashboard
 @import "./assets/scss/components/dashboard/dashboard";
 @import "./assets/scss/components/dashboard/articles";
+@import "./assets/scss/components/dashboard/announcements";
 @import "./assets/scss/components/dashboard/aside-navigation";
 @import "./assets/scss/components/dashboard/social-area";
+@import "./assets/scss/components/dashboard/right-navigation";
+@import "./assets/scss/components/dashboard/left-navigation";
+@import "./assets/scss/components/dashboard/question";
+@import "./assets/scss/components/dashboard/membership";
+@import "./assets/scss/components/dashboard/last-videos";
+@import "./assets/scss/components/dashboard/video";
 
 // Live
 @import "./assets/scss/components/live/live";
