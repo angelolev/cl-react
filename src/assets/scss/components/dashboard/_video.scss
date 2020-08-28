@@ -1,0 +1,22 @@
+.video {
+  width: 100%;
+  cursor: pointer;
+
+  @include breakpoint($sm) {
+    width: 30%;
+  }
+
+  iframe {
+    width: 100%;
+    margin-bottom: 30px;
+    height: 180px;
+
+    @include breakpoint($sm) {
+      max-width: 250px;
+    }
+
+    @include breakpoint($md) {
+      height: 120px;
+    }
+  }
+}

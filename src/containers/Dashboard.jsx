@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import SocialArea from "../components/dashboard/SocialArea/SocialArea";
-import AsideNavigation from "../components/dashboard/AsideNavigation";
-import Articles from "../components/dashboard/Articles/Articles";
 import Talks from "../containers/Talks";
+import RightNavigation from "../components/dashboard/RigthNavigation";
+import LeftNavigation from "../components/dashboard/LeftNavigation";
 
 const Dashboard = () => {
   return (
     <div className="container">
       <main className="dashboard">
         <BrowserRouter>
-          <AsideNavigation />
+          <LeftNavigation />
           <Switch>
             <Route exact path="/dashboard" component={SocialArea} />
             <Route
@@ -19,7 +19,7 @@ const Dashboard = () => {
               component={() => <Talks isDashboard="" />}
             />
           </Switch>
-          <Articles />
+          <RightNavigation />
         </BrowserRouter>
       </main>
     </div>

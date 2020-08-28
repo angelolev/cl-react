@@ -1,0 +1,21 @@
+.announcement {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 0 0 20px;
+  padding: 10px 20px 15px;
+
+  a {
+    color: $color-primary;
+    display: block;
+    font-weight: 400;
+    text-decoration: underline;
+  }
+
+  h4 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+}
