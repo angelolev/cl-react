@@ -6,7 +6,7 @@ const Membership = () => {
       <div className="membership__description">
         <h3>Aprende con nosotros!</h3>
         <p>Conoce los beneficios premium que tenemos para ti!</p>
-        <p>Diferentes opciones para mejorar tus skills!</p>
+        <p>Múltiples opciones para mejorar tus skills!</p>
       </div>
       <div className="membership__list">
         <div className="membership__item">

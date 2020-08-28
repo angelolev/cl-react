@@ -1,0 +1,38 @@
+.last-talks {
+  @include breakpoint($md) {
+    padding: 25px 0;
+  }
+
+  h3 {
+    margin-bottom: 20px;
+  }
+}
+
+.last-talk {
+  display: flex;
+  margin-bottom: 20px;
+
+  &__image {
+    width: 20%;
+
+    @include breakpoint($sm) {
+      width: 10%;
+    }
+
+    img {
+      width: 45px;
+    }
+  }
+
+  &__description {
+    width: 80%;
+
+    @include breakpoint($sm) {
+      width: 90%;
+    }
+
+    h3 {
+      margin-bottom: 5px;
+    }
+  }
+}

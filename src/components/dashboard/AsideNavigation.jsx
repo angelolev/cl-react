@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AsideNavigation = () => {
   return (
     <aside className="asideNavigation">
-      <h3>Navegación</h3>
+      <h3>Menú</h3>
       <ul className="asideNavigation__list">
         <li>
           <Link className="asideNavigation__item" to="/dashboard">
