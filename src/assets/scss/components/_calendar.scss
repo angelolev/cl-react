@@ -1,0 +1,134 @@
+.calendar {
+  margin: 30px 20px;
+
+  @include breakpoint($sm) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+}
+
+.calendar__title {
+  text-align: center;
+  grid-column: 1 / span 5;
+  text-transform: uppercase;
+  font-size: 25px;
+  padding: 20px 0;
+  font-weight: bold;
+
+}
+
+.calendar__header {
+  background-color: #fbc531;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 7px;
+  font-weight: bold;
+  border-radius: 5px;
+
+  display: none;
+
+  @include breakpoint($sm) {
+    display: initial;
+  }
+}
+
+.calendar__item {
+  background-color: #ebecf0;
+  border-radius: 5px;
+  overflow: hidden;
+  min-height: 85px;
+  margin: 20px;
+
+  @include breakpoint($sm) {
+    margin: 0;
+  }
+}
+
+.calendar__item:hover {
+  background-color: #dbdbdf;
+}
+
+.item__dayGroup {
+  background-color: #fbc531;
+  padding: 5px 10px;
+
+  @include breakpoint($sm) {
+    background-color: transparent;
+    padding: 5px 10px;
+  }
+}
+
+.item__day {
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.item__dayName {
+  font-size: 18px;
+  margin-right: 5px;
+  font-weight: bold;
+  display: inline-block;
+
+  @include breakpoint($sm) {
+    display: none;
+  }
+}
+
+.item__card {
+  background-color: #ffffff;
+  margin-top: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+}
+
+.card__category {
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 5px 10px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+
+.card__description {
+  padding: 5px 0;
+  margin: 5px 0;
+}
+
+.card__time {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.javascript {
+  background-color: #f0d91c;
+}
+
+.html {
+  background-color: #ed7631;
+  color: white;
+}
+
+.css {
+  background-color: #008bd0;
+  color: white;
+}
+
+.live {
+  background-color: #f80902;
+  color: white;
+}
+
+.vacio {
+
+  display: none;
+
+  @include breakpoint($sm) {
+    display: initial;
+  }
+}

@@ -5,6 +5,7 @@ import Groups from "../containers/Groups";
 import Talks from "../containers/Talks";
 import Layout from "../components/Layout";
 import Dashboard from "../containers/Dashboard";
+import Calendar from "../containers/Calendar";
 import Live from "../containers/Live/Live";
 
 import "../styles.scss";
@@ -22,6 +23,7 @@ const App = () => (
           path="/talks"
           component={() => <Talks isDashboard="true" />}
         />
+        <Route exact path="/calendario" component={Calendar} />
       </Switch>
     </Layout>
   </BrowserRouter>
