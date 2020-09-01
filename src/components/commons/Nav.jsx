@@ -40,6 +40,11 @@ const Nav = () => (
                   Talks
                 </a>
               </li>
+              <li>
+                <a className="scrollable" href="/calendario">
+                  Calendario
+                </a>
+              </li>
             </ul>
           </div>
           <div className="nav__button">
@@ -76,6 +81,11 @@ const Nav = () => (
             <li>
               <a className="scrollable" href="/talks">
                 Talks
+              </a>
+            </li>
+            <li>
+              <a className="scrollable" href="/calendario">
+                Calendario
               </a>
             </li>
           </ul>
