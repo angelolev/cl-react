@@ -13,7 +13,7 @@ const Calendar = () => {
       day: 2,
       name: "MIÉ",
       category: "html",
-      description: "Intro",
+      description: "Intro a HTML",
       time: "8:00pm",
     },
     {
@@ -27,14 +27,14 @@ const Calendar = () => {
       day: 4,
       name: "VIE",
       category: "live",
-      description: "React js",
+      description: "Primeros pasos con React js",
       time: "8:00pm",
     },
     {
       day: 7,
       name: "LUN",
-      category: "css",
-      description: "Intro",
+      category: "html",
+      description: "Manejo de assets",
       time: "8:00pm",
     },
     {
@@ -44,7 +44,13 @@ const Calendar = () => {
       description: "Condicionales",
       time: "8:00pm",
     },
-    { day: 9, name: "MIÉ" },
+    {
+      day: 9,
+      name: "MIÉ",
+      category: "html",
+      description: "Creando nuestro proyecto",
+      time: "8:00pm",
+    },
     {
       day: 10,
       name: "JUE",
@@ -56,10 +62,16 @@ const Calendar = () => {
       day: 11,
       name: "VIE",
       category: "live",
-      description: "Próximamente",
+      description: "Introducción a Accesibilidad Web",
       time: "8:00pm",
     },
-    { day: 14, name: "LUN" },
+    {
+      day: 14,
+      name: "LUN",
+      category: "css",
+      description: "Intro a CSS",
+      time: "8:00pm",
+    },
     {
       day: 15,
       name: "MAR",
@@ -67,7 +79,13 @@ const Calendar = () => {
       description: "Funciones",
       time: "8:00pm",
     },
-    { day: 16, name: "MIÉ" },
+    {
+      day: 16,
+      name: "MIÉ",
+      category: "css",
+      description: "Modelo de caja",
+      time: "8:00pm",
+    },
     {
       day: 17,
       name: "JUE",
@@ -82,7 +100,13 @@ const Calendar = () => {
       description: "Próximamente",
       time: "8:00pm",
     },
-    { day: 21, name: "LUN" },
+    {
+      day: 21,
+      name: "LUN",
+      category: "css",
+      description: "Selectores, clases e Ids",
+      time: "8:00pm",
+    },
     {
       day: 22,
       name: "MAR",
@@ -90,7 +114,13 @@ const Calendar = () => {
       description: "Metodos con arreglos",
       time: "8:00pm",
     },
-    { day: 23, name: "MIÉ" },
+    {
+      day: 23,
+      name: "MIÉ",
+      category: "css",
+      description: "Herencia y especificidad",
+      time: "8:00pm",
+    },
     {
       day: 24,
       name: "JUE",
@@ -105,7 +135,13 @@ const Calendar = () => {
       description: "Próximamente",
       time: "8:00pm",
     },
-    { day: 28, name: "LUN" },
+    {
+      day: 28,
+      name: "LUN",
+      category: "css",
+      description: "Position y Display",
+      time: "8:00pm",
+    },
     {
       day: 29,
       name: "MAR",
@@ -113,7 +149,13 @@ const Calendar = () => {
       description: "Proyecto Final",
       time: "8:00pm",
     },
-    { day: 30, name: "MIÉ" },
+    {
+      day: 30,
+      name: "MIÉ",
+      category: "css",
+      description: "Maquetando nuestro proyecto",
+      time: "8:00pm",
+    },
   ]);
 
   return (
