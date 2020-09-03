@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 import moment from "moment";
 import "moment/locale/es";
-import { useEffect } from "react";
 moment.locale("es");
 
 const Calendar = () => {
   function getTime(day) {
-    const date = new Date(2020, 8, day, 20, 0, 0);
+    const date = new Date(`September ${day}, 2020 20:00:00 GMT-05:00`);
+    // const date = new Date(2020, 8, day, 20, 0, 0);
     return " " + moment(date).fromNow();
   }
 
@@ -175,14 +175,7 @@ const Calendar = () => {
     };
   });
 
-  console.log(setiembre);
-  console.log(newSetiembre);
-
   const [calendar, setCalendar] = useState(newSetiembre);
-
-  // useEffect(() => {
-  //   setCalendar(setiembre);
-  // }, []);
 
   return (
     <div>
