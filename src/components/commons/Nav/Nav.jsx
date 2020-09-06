@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "./logo.png";
 
 const goToHome = () => {
   window.location.href = "/";
@@ -15,7 +16,7 @@ const Nav = () => (
       <div className="nav__content">
         <div className="nav__top">
           <div className="nav__logo" id="burger">
-            <img src="./images/logo.png" alt="" onClick={goToHome} />
+            <img src={logo} alt="" onClick={goToHome} />
             <span>Coding Latam</span>
           </div>
           <div className="nav__links">

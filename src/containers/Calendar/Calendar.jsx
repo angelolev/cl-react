@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Hero from "../../components/commons/Hero/Hero";
+import calendarImage from "./calendar-img.svg";
 
 const Calendar = () => {
   const [calendar, setCalendar] = useState([
@@ -160,14 +162,10 @@ const Calendar = () => {
 
   return (
     <div>
-      <header className="groups-header">
-        <div className="groups-header__image">
-          <img src="/images/calendar-img.svg" alt="" />
-        </div>
-        <div className="groups-header__text">
-          <h1>Nuestro calendario de actividades del mes</h1>
-        </div>
-      </header>
+      <Hero
+        title="Nuestro calendario de actividades del mes"
+        image={calendarImage}
+      />
       <section className="groups-description">
         <div className="calendar">
           <div className="calendar__title">Setiembre</div>

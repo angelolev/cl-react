@@ -1,4 +1,5 @@
 import React from "react";
+import headerImage from "./terminal.png";
 
 const Header = () => (
   <header className="header">
@@ -10,7 +11,7 @@ const Header = () => (
         <p>Aprende y comparte conocimiento con otros devs de la industria</p>
       </div>
       <div className="header__logos">
-        <img src="./images/terminal.png" alt="" />
+        <img src={headerImage} alt="" />
       </div>
     </div>
   </header>

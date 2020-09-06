@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import SocialArea from "../components/dashboard/SocialArea/SocialArea";
-import Talks from "../containers/Talks";
-import RightNavigation from "../components/dashboard/RigthNavigation";
-import LeftNavigation from "../components/dashboard/LeftNavigation";
+import SocialArea from "../../components/dashboard/SocialArea/SocialArea";
+import Talks from "../../containers/Talks/Talks";
+import RightNavigation from "../../components/dashboard/RigthNavigation";
+import LeftNavigation from "../../components/dashboard/LeftNavigation";
 
 const Dashboard = () => {
   return (

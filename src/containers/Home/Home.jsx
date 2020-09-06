@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import JoinUs from "../components/landing/JoinUs";
-import Header from "../components/commons/Header";
-import RecommendedCourses from "../components/commons/RecommendedCourses";
-import { db } from "../services/firebase";
+import JoinUs from "../../components/landing/JoinUs";
+import Header from "../../components/commons/Header/Header";
+import RecommendedCourses from "../../components/commons/RecommendedCourses/RecommendedCourses";
+import { db } from "../../services/firebase";
 
 const Home = () => {
   const [recommendedCourses, setRecommendedCourses] = useState([]);
