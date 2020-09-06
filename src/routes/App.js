@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 import Dashboard from "../containers/Dashboard";
 import Calendar from "../containers/Calendar";
 import Live from "../containers/Live/Live";
+import GroupHtml from "../components/groups/GroupHtml";
 
 import "../styles.scss";
 
@@ -18,6 +19,7 @@ const App = () => (
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/live" component={Live} />
         <Route exact path="/grupos" component={Groups} />
+        <Route exact path="/grupos/html" component={GroupHtml} />
         <Route
           exact
           path="/talks"

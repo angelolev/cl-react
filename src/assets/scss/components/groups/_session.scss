@@ -1,0 +1,28 @@
+.session {
+  box-shadow: 0 2px 12px 0 rgba(60, 60, 60, 0.1);
+  border-radius: 3px;
+  max-width: 290px;
+  margin: 0 30px 30px 0;
+
+  @include breakpoint($sm) {
+    max-width: 250px;
+  }
+
+  &__video {
+    video {
+      max-width: 100%;
+    }
+  }
+
+  &__description {
+    padding: 20px 10px 50px;
+
+    h4 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+}

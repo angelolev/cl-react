@@ -22,6 +22,9 @@
 @import "./assets/scss/components/announcement";
 @import "./assets/scss/components/calendar";
 
+//Commons
+@import "./assets/scss/components/commons/hero";
+
 // Dashboard
 @import "./assets/scss/components/dashboard/dashboard";
 @import "./assets/scss/components/dashboard/articles";
@@ -38,3 +41,8 @@
 
 // Live
 @import "./assets/scss/components/live/live";
+
+//Groups
+@import "./assets/scss/components/groups/session";
+@import "./assets/scss/components/groups/group-sessions";
+@import "./assets/scss/components/groups/study-group";
