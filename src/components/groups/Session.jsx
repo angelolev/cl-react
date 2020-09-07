@@ -2,6 +2,7 @@ import React from "react";
 import htmlImage from "./html5.png";
 import cssImage from "./css.png";
 import jsImage from "./js.png";
+import { Link } from "react-router-dom";
 
 const verifyType = (type) => {
   switch (type) {
@@ -17,7 +18,7 @@ const verifyType = (type) => {
 };
 
 const Session = (props) => {
-  const { title, type, description, link } = props;
+  const { title, type, description, group, link } = props;
 
   return (
     <div className="session">
@@ -29,7 +30,7 @@ const Session = (props) => {
         <p>{description}</p>
       </div>
       <div className="session__link">
-        <a href={link}>Ver Ahora</a>
+        <Link to={`/grupos/${group}/${link}`}>Ver Ahora</Link>
       </div>
     </div>
   );

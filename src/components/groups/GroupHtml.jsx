@@ -10,47 +10,53 @@ const sessions = [
     title: "Sesion 01 - Intro a HTML",
     description:
       "En esta sesion conversamos sobre temas generales de HTML para poder entender el proceso de renderizado en el browser",
-    link: "/sesion01",
+    group: "html",
+    link: "sesion01",
   },
   {
     id: 1,
     type: "css",
-    title: "Sesion 01 - Intro a HTML",
+    title: "Sesion 02 - Intro a CSS",
     description:
       "En esta sesion conversamos sobre temas generales de HTML para poder entender el proceso de renderizado en el browser",
-    link: "/sesion01",
+    group: "html",
+    link: "sesion02",
   },
   {
     id: 2,
     type: "js",
-    title: "Sesion 01 - Intro a HTML",
+    title: "Sesion 01 - Intro a JS",
     description:
       "En esta sesion conversamos sobre temas generales de HTML para poder entender el proceso de renderizado en el browser",
-    link: "/sesion01",
+    group: "js",
+    link: "sesion01",
   },
   {
     id: 3,
     type: "html",
-    title: "Sesion 01 - Intro a HTML",
+    title: "Sesion 03 - HTML Basico",
     description:
       "En esta sesion conversamos sobre temas generales de HTML para poder entender el proceso de renderizado en el browser",
-    link: "/sesion01",
+    group: "html",
+    link: "sesion03",
   },
   {
     id: 4,
     type: "js",
-    title: "Sesion 01 - Intro a HTML",
+    title: "Sesion 02 - Variables",
     description:
       "En esta sesion conversamos sobre temas generales de HTML para poder entender el proceso de renderizado en el browser",
-    link: "/sesion01",
+    group: "js",
+    link: "sesion02",
   },
   {
     id: 5,
     type: "css",
-    title: "Sesion 01 - Intro a HTML",
+    title: "Sesion 04 - Etiquetas",
     description:
       "En esta sesion conversamos sobre temas generales de HTML para poder entender el proceso de renderizado en el browser",
-    link: "/sesion01",
+    group: "html",
+    link: "sesion04",
   },
 ];
 
@@ -78,6 +84,7 @@ const GroupHtml = () => {
                   title={session.title}
                   type={session.type}
                   description={session.description}
+                  group={session.group}
                   link={session.link}
                 />
               );
