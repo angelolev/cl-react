@@ -1,0 +1,42 @@
+.session-video {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &__info {
+    padding: 20px;
+
+    @include breakpoint($lg) {
+      padding: 20px 0;
+    }
+
+    h2 {
+      text-align: left;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__media {
+    @include breakpoint($md) {
+      width: 70%;
+    }
+
+    .video {
+      max-width: 100%;
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  &__resources {
+    padding: 30px 20px 30px 40px;
+
+    @include breakpoint($md) {
+      width: 30%;
+    }
+  }
+}

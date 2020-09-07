@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Talk from "../components/commons/Talk";
-import HeaderSection from "../components/commons/HeaderSection";
-import { db } from "../services/firebase";
+import Talk from "../../components/commons/Talk/Talk";
+import Hero from "../../components/commons/Hero/Hero";
+import talksImage from "./laptop.webp";
+import { db } from "../../services/firebase";
 
 const Talks = (props) => {
   const [talks, setTalks] = useState([]);
@@ -28,7 +29,14 @@ const Talks = (props) => {
 
   return (
     <div>
-      {isDashboard ? <HeaderSection /> : ""}
+      {isDashboard ? (
+        <Hero
+          title="Conoce las próximas actividades de la comunidad"
+          image={talksImage}
+        />
+      ) : (
+        ""
+      )}
 
       <section className="talks">
         {talks.map((talk) => {

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import CategoryGroups from "../components/commons/CategoryGroup";
-import StudyGroup from "../components/commons/StudyGroup";
-import { db } from "../services/firebase";
+import CategoryGroups from "../../components/commons/CategoryGroup/CategoryGroup";
+import StudyGroup from "../../components/commons/StudyGroup/StudyGroup";
+import Hero from "../../components/commons/Hero/Hero";
+import groupsImage from "./study.png";
+import { db } from "../../services/firebase";
 
 const Groups = () => {
   const [categories, setCategories] = useState([]);
@@ -35,14 +37,10 @@ const Groups = () => {
 
   return (
     <div>
-      <header className="groups-header">
-        <div className="groups-header__image">
-          <img src="/images/laptop.webp" alt="" />
-        </div>
-        <div className="groups-header__text">
-          <h1>Mejora tu aprendizaje con los grupos de estudio</h1>
-        </div>
-      </header>
+      <Hero
+        title="Mejora tu aprendizaje con los grupos de estudio"
+        image={groupsImage}
+      />
       <section className="groups-description">
         <ul className="groups-tags">
           {categories.map((category) => {
