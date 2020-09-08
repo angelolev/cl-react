@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ArticleItem from "./ArticleItem";
 import articleImage from "./article.png";
+import { db } from "../../../services/firebase";
 
 const Articles = (props) => {
-  const { heading, articlesList } = props.articles;
+  const [resources, setResources] = useState([]);
+  const id = props.id ? props.id : "";
+
+  useEffect(() => {
+    db.collection("resources")
+      .where("session_id", "==", id)
+      .get()
+      .then((querySnapshot) => {
+        const loadedResources = [];
+        querySnapshot.forEach((doc) => {
+          const currentDoc = doc.data();
+          currentDoc.id = doc.id;
+          loadedResources.push(currentDoc);
+        });
+        setResources(loadedResources);
+      });
+  }, []);
+
   return (
     <div className="articles">
       <div className="articles__title">
-        <h3>{heading}</h3>
+        <h3>Recursos de la clase</h3>
       </div>
       <div className="articles__list">
-        {articlesList.map((article) => {
+        {resources.map((article) => {
           return (
             <ArticleItem
               key={article.id}
