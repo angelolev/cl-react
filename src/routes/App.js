@@ -21,7 +21,7 @@ const App = () => (
         <Route exact path="/live" component={Live} />
         <Route exact path="/grupos" component={Groups} />
         <Route exact path="/grupos/html" component={GroupHtml} />
-        <Route exact path="/grupos/html/sesion01" component={SessionVideo} />
+        <Route exact path="/grupos/:group/:link" component={SessionVideo} />
         <Route
           exact
           path="/talks"
