@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Articles from "../commons/Articles/Articles";
 import Questions from "../commons/Questions/Questions";
+import { db } from "../../services/firebase";
 
 const sessionArticles = {
   heading: "Recursos de la clase",
@@ -63,92 +64,51 @@ const sessionQuestions = {
   ],
 };
 
-const sessions = [
-  {
-    id: 0,
-    type: "html",
-    title: "Sesion 01 - Intro a HTML",
-    description:
-      "En esta sesion conversamos sobre temas generales de HTML para poder entender el proceso de renderizado en el browser",
-    group: "html",
-    link: "sesion01",
-  },
-  {
-    id: 1,
-    type: "css",
-    title: "Sesion 02 - Intro a CSS",
-    description:
-      "En esta sesion conversamos sobre temas generales de HTML para poder entender el proceso de renderizado en el browser",
-    group: "html",
-    link: "sesion02",
-  },
-  {
-    id: 2,
-    type: "js",
-    title: "Sesion 01 - Intro a JS",
-    description:
-      "En esta sesion conversamos sobre temas generales de HTML para poder entender el proceso de renderizado en el browser",
-    group: "js",
-    link: "sesion01",
-  },
-  {
-    id: 3,
-    type: "html",
-    title: "Sesion 03 - HTML Basico",
-    description:
-      "En esta sesion conversamos sobre temas generales de HTML para poder entender el proceso de renderizado en el browser",
-    group: "html",
-    link: "sesion03",
-  },
-  {
-    id: 4,
-    type: "js",
-    title: "Sesion 02 - Variables",
-    description:
-      "En esta sesion conversamos sobre temas generales de HTML para poder entender el proceso de renderizado en el browser",
-    group: "js",
-    link: "sesion02",
-  },
-  {
-    id: 5,
-    type: "css",
-    title: "Sesion 04 - Etiquetas",
-    description:
-      "En esta sesion conversamos sobre temas generales de HTML para poder entender el proceso de renderizado en el browser",
-    group: "html",
-    link: "sesion04",
-  },
-];
-
 const SessionVideo = (props) => {
+  const [session, setSession] = useState([]);
   const link = props.match.params.link;
   const group = props.match.params.group;
-  let session = {};
-  console.log(link);
-  console.log(group);
 
-  const getSession = (link, group) => {
-    session = sessions.filter(
-      (session) => session.link === link && session.group === group
-    );
-    console.log(session);
+  useEffect(() => {
+    db.collection("sessions")
+      .get()
+      .then((querySnapshot) => {
+        const loadedSessions = [];
+        querySnapshot.forEach((doc) => {
+          const currentDoc = doc.data();
+          currentDoc.id = doc.id;
+          loadedSessions.push(currentDoc);
+        });
+        const loadedSession = loadedSessions.filter(
+          (session) => session.link === link && session.group === group
+        );
+        setSession(loadedSession);
+      });
+  }, []);
+
+  const formatTitle = (link, title) => {
+    return link[0].toUpperCase() + link.slice(1) + ": " + title;
   };
-
-  getSession(link, group);
 
   return (
     <section className="session-video">
       <div className="container"></div>
       <div className="session-video__media">
-        <video
-          className="video"
-          src="https://tzdigitalmediaqa001.blob.core.windows.net/umb-ms-media01/1010/medicare_supplement_changes_2020.mp4"
-          controls="controls"
-        ></video>
-        <div className="session-video__info">
-          <h2>{session[0].title}</h2>
-          <p>{session[0].description}</p>
-        </div>
+        {session[0] ? (
+          <>
+            <video
+              className="video"
+              src="https://tzdigitalmediaqa001.blob.core.windows.net/umb-ms-media01/1010/medicare_supplement_changes_2020.mp4"
+              controls="controls"
+            ></video>
+            <div className="session-video__info">
+              <h2>{formatTitle(session[0].link, session[0].title)}</h2>
+              <p>{session[0].description}</p>
+            </div>
+          </>
+        ) : (
+          "Loading..."
+        )}
       </div>
       <div className="session-video__resources">
         <Articles articles={sessionArticles} />

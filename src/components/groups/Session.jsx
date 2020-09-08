@@ -17,6 +17,10 @@ const verifyType = (type) => {
   }
 };
 
+const formatTitle = (link, title) => {
+  return link[0].toUpperCase() + link.slice(1) + ": " + title;
+};
+
 const Session = (props) => {
   const { title, type, description, group, link } = props;
 
@@ -26,7 +30,7 @@ const Session = (props) => {
         <img src={verifyType(type)} alt="" />
       </div>
       <div className="session__description">
-        <h4>{title}</h4>
+        <h4>{formatTitle(link, title)}</h4>
         <p>{description}</p>
       </div>
       <div className="session__link">
