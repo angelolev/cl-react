@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Articles from "../commons/Articles/Articles";
 import Questions from "../commons/Questions/Questions";
 import { db } from "../../services/firebase";
+import Loader from "../loader/Loader";
 
 const sessionArticles = {
   heading: "Recursos de la clase",
@@ -107,7 +108,7 @@ const SessionVideo = (props) => {
             </div>
           </>
         ) : (
-          "Loading..."
+          <Loader />
         )}
       </div>
       <div className="session-video__resources">

@@ -3,6 +3,7 @@ import Hero from "../commons/Hero/Hero";
 import heroImage from "./studygroup.svg";
 import Session from "./Session";
 import { db } from "../../services/firebase";
+import Loader from "../loader/Loader";
 
 // const sessions = [
 //   {
@@ -92,21 +93,24 @@ const GroupHtml = () => {
               los temas de las clases.
             </p>
           </div>
-
-          <div className="group__sessions">
-            {sessions.map((session) => {
-              return (
-                <Session
-                  key={session.id}
-                  title={session.title}
-                  type={session.type}
-                  description={session.description}
-                  group={session.group}
-                  link={session.link}
-                />
-              );
-            })}
-          </div>
+          {sessions.length > 0 ? (
+            <div className="group__sessions">
+              {sessions.map((session) => {
+                return (
+                  <Session
+                    key={session.id}
+                    title={session.title}
+                    type={session.type}
+                    description={session.description}
+                    group={session.group}
+                    link={session.link}
+                  />
+                );
+              })}
+            </div>
+          ) : (
+            <Loader />
+          )}
         </div>
       </section>
     </>
