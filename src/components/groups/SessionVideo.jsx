@@ -3,6 +3,7 @@ import Articles from "../commons/Articles/Articles";
 import Questions from "../commons/Questions/Questions";
 import { db } from "../../services/firebase";
 import Loader from "../loader/Loader";
+import { Link } from "react-router-dom";
 
 // const sessionArticles = {
 //   heading: "Recursos de la clase",
@@ -99,12 +100,16 @@ const SessionVideo = (props) => {
           <>
             <video
               className="video"
-              src="https://tzdigitalmediaqa001.blob.core.windows.net/umb-ms-media01/1010/medicare_supplement_changes_2020.mp4"
+              // src="https://tzdigitalmediaqa001.blob.core.windows.net/umb-ms-media01/1010/medicare_supplement_changes_2020.mp4"
+              src={session[0].urlVideo}
               controls="controls"
             ></video>
             <div className="session-video__info">
-              <h2>{formatTitle(session[0].link, session[0].title)}</h2>
+              <h2>{session[0].title}</h2>
               <p>{session[0].description}</p>
+            </div>
+            <div className="sessionVideo__link">
+              <Link to={`/clases`}>Regresar</Link>
             </div>
           </>
         ) : (

@@ -30,11 +30,11 @@ const Session = (props) => {
         <img src={verifyType(type)} alt="" />
       </div>
       <div className="session__description">
-        <h4>{formatTitle(link, title)}</h4>
+        <h4>{title}</h4>
         <p>{description}</p>
       </div>
       <div className="session__link">
-        <Link to={`/grupos/${group}/${link}`}>Ver Ahora</Link>
+        <Link to={`/clases/${group}/${link}`}>Ver Ahora</Link>
       </div>
     </div>
   );
