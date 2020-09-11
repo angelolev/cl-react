@@ -4,10 +4,12 @@ const ArticleItem = (props) => {
   return (
     <div className="articles__item">
       <div className="item__image">
-        <img src={props.article.image} alt="" />
+        <img src={props.image} alt="" />
       </div>
       <div className="item__description">
-        <a href={props.article.link}>{props.article.title}</a>
+        <a href={props.article.link} target="_blank" rel="noopener noreferrer">
+          {props.article.title}
+        </a>
       </div>
     </div>
   );

@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "../containers/Home";
-import Groups from "../containers/Groups";
-import Talks from "../containers/Talks";
+import Home from "../containers/Home/Home";
+import Groups from "../containers/Groups/Groups";
+import Talks from "../containers/Talks/Talks";
 import Layout from "../components/Layout";
-import Dashboard from "../containers/Dashboard";
-import Calendar from "../containers/Calendar";
+import Dashboard from "../containers/Dashboard/Dashboard";
+import Calendar from "../containers/Calendar/Calendar";
 import Live from "../containers/Live/Live";
 import GroupHtml from "../components/groups/GroupHtml";
+import SessionVideo from "../components/groups/SessionVideo";
 
 import "../styles.scss";
 
@@ -19,7 +20,8 @@ const App = () => (
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/live" component={Live} />
         <Route exact path="/grupos" component={Groups} />
-        <Route exact path="/grupos/html" component={GroupHtml} />
+        <Route exact path="/clases" component={GroupHtml} />
+        <Route exact path="/clases/:group/:link" component={SessionVideo} />
         <Route
           exact
           path="/talks"

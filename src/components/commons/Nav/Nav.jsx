@@ -1,4 +1,6 @@
 import React from "react";
+import logo from "./logo.png";
+import { Link } from "react-router-dom";
 
 const goToHome = () => {
   window.location.href = "/";
@@ -15,35 +17,30 @@ const Nav = () => (
       <div className="nav__content">
         <div className="nav__top">
           <div className="nav__logo" id="burger">
-            <img src="./images/logo.png" alt="" onClick={goToHome} />
+            <img src={logo} alt="" onClick={goToHome} />
             <span>Coding Latam</span>
           </div>
           <div className="nav__links">
             <ul>
               <li>
-                <a className="scrollable" href="#description">
-                  Cómo funciona
-                </a>
+                <Link className="scrollable" to="/clases">
+                  Clases
+                </Link>
               </li>
               <li>
-                <a className="scrollable" href="#courses">
-                  Cursos
-                </a>
-              </li>
-              <li>
-                <a className="scrollable" href="/grupos">
+                <Link className="scrollable" to="/grupos">
                   Grupos de estudio
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="scrollable" href="/talks">
+                <Link className="scrollable" to="/talks">
                   Talks
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="scrollable" href="/calendario">
+                <Link className="scrollable" to="/calendario">
                   Calendario
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -58,19 +55,10 @@ const Nav = () => (
             <button id="navClose" onClick={showMenu}>
               X
             </button>
+
             <li>
-              <a className="scrollable" href="#join">
-                Únete
-              </a>
-            </li>
-            <li>
-              <a className="scrollable" href="#description">
-                Cómo funciona
-              </a>
-            </li>
-            <li>
-              <a className="scrollable" href="#courses">
-                Cursos
+              <a className="scrollable" href="/clases">
+                Clases
               </a>
             </li>
             <li>
