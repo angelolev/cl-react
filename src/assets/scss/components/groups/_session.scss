@@ -2,10 +2,18 @@
   box-shadow: 0 2px 12px 0 rgba(60, 60, 60, 0.1);
   border-radius: 3px;
   max-width: 290px;
-  margin: 0 30px 30px 0;
+  margin: 0 0 30px 0;
 
   @include breakpoint($sm) {
     max-width: 270px;
+  }
+
+  @include breakpoint($md) {
+    margin: 0 30px 30px 0;
+  }
+
+  img {
+    min-width: 100%;
   }
 
   &__video {
@@ -16,6 +24,7 @@
 
   &__description {
     padding: 20px;
+    min-height: 175px;
 
     h4 {
       margin-bottom: 10px;
@@ -49,7 +58,11 @@
   }
 
   &Video__link {
-    padding-bottom: 20px;
+    padding: 0 0 20px 20px;
+
+    @include breakpoint($md) {
+      padding: 0 0 30px 0;
+    }
 
     a {
       border: 1px solid #27ae60;
@@ -58,7 +71,7 @@
       cursor: pointer;
       font-weight: 600;
       padding: 15px 20px;
-      margin: 0;
+
       max-width: 100%;
       word-spacing: 2px;
 

@@ -3,6 +3,7 @@ import Talk from "../../components/commons/Talk/Talk";
 import Hero from "../../components/commons/Hero/Hero";
 import talksImage from "./laptop.webp";
 import { db } from "../../services/firebase";
+import Loader from "../../components/loader/Loader";
 
 const Talks = (props) => {
   const [talks, setTalks] = useState([]);
@@ -39,6 +40,7 @@ const Talks = (props) => {
       )}
 
       <section className="talks">
+        {talks[0] ? null : <Loader />}
         {talks.map((talk) => {
           return (
             <Talk
