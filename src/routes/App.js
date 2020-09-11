@@ -4,6 +4,7 @@ import Home from "../containers/Home/Home";
 import Groups from "../containers/Groups/Groups";
 import Talks from "../containers/Talks/Talks";
 import Layout from "../components/Layout";
+import Admin from "../containers/Admin/Admin";
 import Dashboard from "../containers/Dashboard/Dashboard";
 import Calendar from "../containers/Calendar/Calendar";
 import Live from "../containers/Live/Live";
@@ -18,6 +19,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/admin/recursos" component={Admin} />
         <Route exact path="/live" component={Live} />
         <Route exact path="/grupos" component={Groups} />
         <Route exact path="/clases" component={GroupHtml} />
