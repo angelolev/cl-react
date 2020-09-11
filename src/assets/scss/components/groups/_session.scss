@@ -47,4 +47,25 @@
       }
     }
   }
+
+  &Video__link {
+    padding-bottom: 20px;
+
+    a {
+      border: 1px solid #27ae60;
+      display: inline-block;
+      color: #27ae60;
+      cursor: pointer;
+      font-weight: 600;
+      padding: 15px 20px;
+      margin: 0;
+      max-width: 100%;
+      word-spacing: 2px;
+
+      &:hover {
+        background-color: #27ae60;
+        color: #fff;
+      }
+    }
+  }
 }
