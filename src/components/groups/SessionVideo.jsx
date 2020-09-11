@@ -103,6 +103,7 @@ const SessionVideo = (props) => {
               // src="https://tzdigitalmediaqa001.blob.core.windows.net/umb-ms-media01/1010/medicare_supplement_changes_2020.mp4"
               src={session[0].urlVideo}
               controls="controls"
+              controlslist="nodownload"
             ></video>
             <div className="session-video__info">
               <h2>{session[0].title}</h2>

@@ -29,14 +29,22 @@
       max-width: 100%;
       padding: 0;
       width: 100%;
+
+      @include breakpoint($md) {
+
+        padding-top: 30px;
+      }
+
     }
   }
 
   &__resources {
-    padding: 30px 20px 30px 40px;
+    padding: 20px;
+    width: 100%;
 
     @include breakpoint($md) {
       width: 30%;
+      padding: 30px;
     }
   }
 }

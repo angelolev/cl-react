@@ -4,6 +4,7 @@ import StudyGroup from "../../components/commons/StudyGroup/StudyGroup";
 import Hero from "../../components/commons/Hero/Hero";
 import groupsImage from "./study.png";
 import { db } from "../../services/firebase";
+import Loader from "../../components/loader/Loader";
 
 const Groups = () => {
   const [categories, setCategories] = useState([]);
@@ -41,7 +42,9 @@ const Groups = () => {
         title="Mejora tu aprendizaje con los grupos de estudio"
         image={groupsImage}
       />
+
       <section className="groups-description">
+        {categories[0] ? null : <Loader />}
         <ul className="groups-tags">
           {categories.map((category) => {
             return <CategoryGroups key={category.id} name={category.name} />;

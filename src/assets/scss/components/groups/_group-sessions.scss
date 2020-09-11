@@ -1,5 +1,10 @@
 .group__sessions {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+
+  @include breakpoint($md) {
+    justify-content: flex-start;
+  }
+
 }
