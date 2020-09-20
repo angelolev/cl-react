@@ -109,7 +109,7 @@ const SessionVideo = (props) => {
               <h2>{session[0].title}</h2>
               <p>{session[0].description}</p>
             </div>
-            <div className="sessionVideo__link">
+            <div className="session-video__link">
               <Link to={`/clases`}>Regresar</Link>
             </div>
           </>

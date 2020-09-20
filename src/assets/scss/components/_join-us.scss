@@ -21,11 +21,21 @@
     font-size: 16px;
   }
 
+  h2 {
+    @media (prefers-color-scheme: dark) {
+      color: $color-blue-dark;
+    }
+  }
+
   p {
     margin: 0 0 40px;
 
     @include breakpoint($md) {
       font-size: 20px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: $color-blue-dark;
     }
   }
 
@@ -58,10 +68,18 @@
 
       h3 {
         margin-bottom: 10px;
+
+        @media (prefers-color-scheme: dark) {
+          color: $color-blue-dark;
+        }
       }
 
       p {
         margin-bottom: 20px;
+
+        @media (prefers-color-scheme: dark) {
+          color: $color-blue-dark;
+        }
       }
 
       a {
