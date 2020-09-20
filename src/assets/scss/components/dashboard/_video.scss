@@ -29,5 +29,9 @@
   p {
     font-size: 14px;
     margin-top: 5px;
+
+    @media (prefers-color-scheme: dark) {
+      color: $color-white;
+    }
   }
 }

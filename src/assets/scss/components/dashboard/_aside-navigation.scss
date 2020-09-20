@@ -52,4 +52,10 @@
       }
     }
   }
+
+  @media (prefers-color-scheme: dark) {
+    &__item {
+      color: $color-white;
+    }
+  }
 }
