@@ -68,6 +68,7 @@ const GroupHtml = () => {
   useEffect(() => {
     db.collection("sessions")
       .orderBy("group")
+      .orderBy("title")
       .get()
       .then((querySnapshot) => {
         const loadedSessions = [];
