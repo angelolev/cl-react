@@ -17,6 +17,10 @@
       font-size: 16px;
       font-weight: 600;
       text-decoration: underline;
+
+      @media (prefers-color-scheme: dark) {
+        color: $color-white;
+      }
     }
   }
 

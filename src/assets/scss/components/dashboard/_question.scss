@@ -21,11 +21,14 @@
   &__join {
     color: $color-blue-dark;
     font-size: 12px;
+
+    @media (prefers-color-scheme: dark) {
+      color: $color-white;
+    }
   }
 }
 
 .questions {
-
   &__list {
     padding: 5px 0;
   }

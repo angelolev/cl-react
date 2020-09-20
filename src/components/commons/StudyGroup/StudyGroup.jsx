@@ -8,7 +8,6 @@ const StudyGroup = (props) => (
     <div className="group__description">
       <h3>{[props.name]}</h3>
       <p>{props.description}</p>
-      <a href="/">Ver Clases</a>
     </div>
   </div>
 );
