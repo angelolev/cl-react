@@ -168,6 +168,13 @@ const Calendar = () => {
       description: "Maquetando nuestro proyecto",
       time: "8:00pm GMT-5 ",
     },
+    {
+      day: 1,
+      name: "JUE",
+      category: "english",
+      description: "Chill and meet",
+      time: "9:00pm GMT-5 ",
+    },
   ];
 
   const newSetiembre = setiembre.map((item) => {
