@@ -9,8 +9,8 @@ const Membership = () => {
           Obtén seguimiento personal y mentoría 1 a 1 con nuestros intructores.
         </p>
         <p>
-          Tenemos para ti múltiples opciones para encontrar la mejor versión de
-          ti y mejorar tus habilidades!
+          Tenemos múltiples opciones para encontrar la mejor versión de ti y
+          mejorar tus habilidades!
         </p>
       </div>
       <div className="membership__list">
