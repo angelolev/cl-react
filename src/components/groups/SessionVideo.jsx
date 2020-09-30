@@ -1,43 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Articles from "../commons/Articles/Articles";
 import Questions from "../commons/Questions/Questions";
+import Membership from "../dashboard/Membership/Membership";
 import { db } from "../../services/firebase";
 import Loader from "../loader/Loader";
 import { Link } from "react-router-dom";
-
-// const sessionArticles = {
-//   heading: "Recursos de la clase",
-//   articlesList: [
-//     {
-//       id: 1,
-//       title: "How to learn and practice coding efficiently",
-//       link:
-//         "https://dev.to/magoo763/how-to-learn-and-practice-coding-efficiently-24nn",
-//     },
-//     {
-//       id: 2,
-//       title: "18+ CSS book effect for your projects",
-//       link: "https://csshint.com/css-book-effect/",
-//     },
-//     {
-//       id: 3,
-//       title: "Static Readme Regeneration",
-//       link: "https://aralroca.com/blog/static-readme-regeneration",
-//     },
-//     {
-//       id: 4,
-//       title: "Small Tips to Write Better React Code",
-//       link:
-//         "https://livecodestream.dev/post/2020-07-28-small-tips-to-write-better-react-code",
-//     },
-//     {
-//       id: 5,
-//       title: "25 Examples of Engaging 404 Error Pages",
-//       link:
-//         "https://qodeinteractive.com/magazine/engaging-404-error-page-designs/",
-//     },
-//   ],
-// };
 
 const sessionQuestions = {
   title: "Preguntas de la clase",
@@ -100,7 +67,6 @@ const SessionVideo = (props) => {
           <>
             <video
               className="video"
-              // src="https://tzdigitalmediaqa001.blob.core.windows.net/umb-ms-media01/1010/medicare_supplement_changes_2020.mp4"
               src={session[0].urlVideo}
               controls="controls"
               controlslist="nodownload"
@@ -123,7 +89,8 @@ const SessionVideo = (props) => {
             <Articles id={session[0].id} />
           </>
         ) : null}
-        <Questions questions={sessionQuestions} />
+        {/* <Questions questions={sessionQuestions} /> */}
+        <Membership />
       </div>
     </section>
   );

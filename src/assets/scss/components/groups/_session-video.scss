@@ -1,8 +1,16 @@
 .session-video {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
+
+  @include breakpoint($md) {
+    max-width: 920px;
+  }
+
+  @include breakpoint($lg) {
+    max-width: 1200px;
+  }
 
   &__info {
     padding: 20px;
@@ -17,6 +25,8 @@
 
     p {
       margin-bottom: 20px;
+      max-width: 600px;
+      line-height: 22px;
     }
   }
 

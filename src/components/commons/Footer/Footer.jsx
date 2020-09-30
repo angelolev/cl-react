@@ -20,10 +20,10 @@ const Footer = () => (
         </a>
         <a
           target="_blank"
-          href="https://wa.link/du8zv8"
+          href="https://discord.gg/7bpGcDT"
           rel="noopener noreferrer"
         >
-          <span className="icon icon-whatsapp"></span>
+          <span className="icon icon-discord"></span>
         </a>
         <a
           target="_blank"
