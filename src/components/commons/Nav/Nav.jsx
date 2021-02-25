@@ -33,8 +33,8 @@ const Nav = () => (
                 </Link>
               </li>
               <li>
-                <Link className="scrollable" to="/talks">
-                  Talks
+                <Link className="scrollable" to="/mentor">
+                  Mentoría
                 </Link>
               </li>
               <li>

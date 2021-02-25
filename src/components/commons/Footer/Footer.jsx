@@ -1,6 +1,6 @@
 import React from "react";
-const d = new Date
-const year = d.getFullYear()
+const d = new Date();
+const year = d.getFullYear();
 
 const Footer = () => (
   <footer className="footer">
@@ -43,7 +43,7 @@ const Footer = () => (
         </a>
       </div>
       <div className="footer__content">
-        <p>© Coding Latam {year}. Todos los derechos reservados</p>
+        <p>© Coding Latam {year} - Todos los derechos reservados</p>
       </div>
     </div>
   </footer>

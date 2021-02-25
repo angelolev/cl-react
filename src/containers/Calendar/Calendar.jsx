@@ -8,10 +8,117 @@ moment.locale("es");
 
 const Calendar = () => {
   function getTime(day) {
-    const date = new Date(`September ${day}, 2020 20:00:00 GMT-05:00`);
+    const date = new Date(`March ${day}, 2021 20:00:00 GMT-05:00`);
     // const date = new Date(2020, 8, day, 20, 0, 0);
     return " " + moment(date).fromNow();
   }
+
+  const marzo = [
+    {
+      day: 1,
+      name: "LUN",
+    },
+    {
+      day: 2,
+      name: "MAR",
+    },
+    {
+      day: 3,
+      name: "MIE",
+    },
+    {
+      day: 4,
+      name: "JUE",
+    },
+    {
+      day: 5,
+      name: "VIE",
+      category: "live",
+      description: "TBD",
+      time: "8:00pm GMT-5 ",
+    },
+    {
+      day: 8,
+      name: "LUN",
+    },
+    {
+      day: 9,
+      name: "MAR",
+    },
+    {
+      day: 10,
+      name: "MIE",
+    },
+    {
+      day: 11,
+      name: "JUE",
+    },
+    {
+      day: 12,
+      name: "VIE",
+      category: "live",
+      description: "TBD",
+      time: "8:00pm GMT-5 ",
+    },
+    {
+      day: 15,
+      name: "LUN",
+    },
+    {
+      day: 16,
+      name: "MAR",
+    },
+    {
+      day: 17,
+      name: "MIE",
+    },
+    {
+      day: 18,
+      name: "JUE",
+    },
+    {
+      day: 19,
+      name: "VIE",
+      category: "live",
+      description: "TBD",
+      time: "8:00pm GMT-5 ",
+    },
+    {
+      day: 22,
+      name: "LUN",
+    },
+    {
+      day: 23,
+      name: "MAR",
+    },
+    {
+      day: 24,
+      name: "MIE",
+    },
+    {
+      day: 25,
+      name: "JUE",
+    },
+    {
+      day: 26,
+      name: "VIE",
+      category: "live",
+      description: "TBD",
+      time: "8:00pm GMT-5 ",
+    },
+    {
+      day: 29,
+      name: "LUN",
+    },
+    {
+      day: 30,
+      name: "MAR",
+    },
+    {
+      day: 31,
+      name: "MIE",
+    },
+  ];
 
   const setiembre = [
     {
@@ -177,30 +284,27 @@ const Calendar = () => {
     },
   ];
 
-  const newSetiembre = setiembre.map((item) => {
+  const currentMonth = marzo.map((item) => {
     return {
       ...item,
       timeAgo: getTime(item.day),
     };
   });
 
-  const [calendar, setCalendar] = useState(newSetiembre);
+  const [calendar, setCalendar] = useState(currentMonth);
 
   return (
     <div>
-      <Hero
-        title="Nuestro calendario de actividades del mes"
-        image={calendarImage}
-      />
+      <Hero title="Calendario de actividades del mes" image={calendarImage} />
       <section className="groups-description">
         <div className="calendar">
-          <div className="calendar__title">Setiembre</div>
+          <div className="calendar__title">Marzo</div>
           <div className="calendar__header">LUN</div>
           <div className="calendar__header">MAR</div>
           <div className="calendar__header">MIÉ</div>
           <div className="calendar__header">JUE</div>
           <div className="calendar__header">VIE</div>
-          <div className="calendar__item vacio"></div>
+          {/* <div className="calendar__item vacio"></div> */}
           {calendar.map((item, id) => {
             return (
               <div className="calendar__item" key={id}>

@@ -45,7 +45,7 @@ const JoinUsMentor = () => {
               <h3>Reunión mensual de mentores</h3>
               <p>
                 1 vez al mes nos juntamos a conversar sobre el programa(y unas
-                cevezas)
+                cervezas)
               </p>
             </div>
           </div>
