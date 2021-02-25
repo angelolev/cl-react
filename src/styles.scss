@@ -12,7 +12,7 @@
 @import "./assets/scss/components/header";
 @import "./assets/scss/components/banner";
 @import "./assets/scss/components/recommended-courses";
-@import "./assets/scss/components/course";
+@import "./assets/scss/components/recommended-course";
 @import "./assets/scss/components/join-us";
 @import "./assets/scss/components/subscribe";
 @import "./assets/scss/components/groups-header";
@@ -24,6 +24,14 @@
 
 //Commons
 @import "./assets/scss/components/commons/hero";
+
+//Forms
+@import "./assets/scss/components/forms/form-sign-in";
+
+//Course
+@import "./assets/scss/components/course/course";
+@import "./assets/scss/components/course/course-session";
+@import "./assets/scss/components/course/related-courses";
 
 // Dashboard
 @import "./assets/scss/components/dashboard/dashboard";
@@ -43,10 +51,14 @@
 @import "./assets/scss/components/live/live";
 
 //Groups
-@import "./assets/scss/components/groups/session";
+@import "./assets/scss/components/groups/group-session";
 @import "./assets/scss/components/groups/group-sessions";
 @import "./assets/scss/components/groups/study-group";
 @import "./assets/scss/components/groups/session-video";
 
 //Admin
 @import "./assets/scss/components/admin/admin";
+
+//Join
+@import "./assets/scss/components/join-us/join";
+@import "./assets/scss/components/join-us/join-mentor";

@@ -43,13 +43,13 @@
             transition: border 0.3s;
           }
 
-          @media (prefers-color-scheme: dark) {
-            color: $color-white;
+          // @media (prefers-color-scheme: dark) {
+          //   color: $color-white;
 
-            &:hover {
-              border-bottom: 2px solid $color-white;
-            }
-          }
+          //   &:hover {
+          //     border-bottom: 2px solid $color-white;
+          //   }
+          // }
         }
       }
     }

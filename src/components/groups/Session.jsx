@@ -25,15 +25,15 @@ const Session = (props) => {
   const { title, type, description, group, link } = props;
 
   return (
-    <div className="session">
-      <div className="session__image">
+    <div className="group-session">
+      <div className="group-session__image">
         <img src={verifyType(type)} alt="" />
       </div>
-      <div className="session__description">
+      <div className="group-session__description">
         <h4>{title}</h4>
         <p>{description}</p>
       </div>
-      <div className="session__link">
+      <div className="group-session__link">
         <Link to={`/clases/${group}/${link}`}>Ver Ahora</Link>
       </div>
     </div>

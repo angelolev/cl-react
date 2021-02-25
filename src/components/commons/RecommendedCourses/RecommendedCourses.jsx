@@ -1,5 +1,5 @@
 import React from "react";
-import CourseCard from "../CourseCard/CourseCard";
+import RecommendedCourseCard from "../RecommendedCourses/RecommendedCourseCard";
 
 const RecommendedCourses = (props) => (
   <div className="recommended-courses">
@@ -12,7 +12,7 @@ const RecommendedCourses = (props) => (
         </p>
       </div>
       {props.courses.map((course) => (
-        <CourseCard course={course} key={course.id} />
+        <RecommendedCourseCard course={course} key={course.id} />
       ))}
     </div>
   </div>

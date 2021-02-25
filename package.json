@@ -11,8 +11,12 @@
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^6.15.1",
+    "react-modal": "^3.12.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "sweetalert2": "^10.14.0"
   },
   "scripts": {
     "start": "react-scripts start",

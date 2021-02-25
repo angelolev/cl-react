@@ -57,9 +57,9 @@
     padding: 5px 10px;
   }
 
-  @media (prefers-color-scheme: dark) {
-    color: $color-blue-dark;
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   color: $color-blue-dark;
+  // }
 }
 
 .item__day {
@@ -101,18 +101,18 @@
   padding: 5px 0;
   margin: 5px 0;
 
-  @media (prefers-color-scheme: dark) {
-    color: $color-blue-dark;
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   color: $color-blue-dark;
+  // }
 }
 
 .card__time {
   font-weight: 600;
   font-size: 14px;
 
-  @media (prefers-color-scheme: dark) {
-    color: $color-blue-dark;
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   color: $color-blue-dark;
+  // }
 }
 
 .javascript {

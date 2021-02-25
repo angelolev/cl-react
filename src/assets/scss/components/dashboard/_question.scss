@@ -22,9 +22,9 @@
     color: $color-blue-dark;
     font-size: 12px;
 
-    @media (prefers-color-scheme: dark) {
-      color: $color-white;
-    }
+    // @media (prefers-color-scheme: dark) {
+    //   color: $color-white;
+    // }
   }
 }
 
