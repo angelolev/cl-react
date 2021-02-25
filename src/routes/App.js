@@ -10,6 +10,9 @@ import Calendar from "../containers/Calendar/Calendar";
 import Live from "../containers/Live/Live";
 import GroupHtml from "../components/groups/GroupHtml";
 import SessionVideo from "../components/groups/SessionVideo";
+import Course from "../containers/Course/Course";
+import JoinUsStudent from '../containers/JoinUs/JoinUsStudent'
+import JoinUsMentor from '../containers/JoinUs/JoinUsMentor'
 
 import "../styles.scss";
 
@@ -20,6 +23,7 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/admin/recursos" component={Admin} />
+        <Route exact path="/cursos/desarrollo-web" component={Course} />
         <Route exact path="/live" component={Live} />
         <Route exact path="/grupos" component={Groups} />
         <Route exact path="/clases" component={GroupHtml} />
@@ -30,6 +34,8 @@ const App = () => (
           component={() => <Talks isDashboard="true" />}
         />
         <Route exact path="/calendario" component={Calendar} />
+        <Route exact path="/estudiante" component={JoinUsStudent} />
+        <Route exact path="/mentor" component={JoinUsMentor} />
       </Switch>
     </Layout>
   </BrowserRouter>

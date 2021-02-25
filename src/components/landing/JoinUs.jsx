@@ -11,11 +11,14 @@ const JoinUs = () => (
         </div>
         <div className="item__description">
           <h3>Estudiante</h3>
-          <p>Quieres aprender sobre tecnologia y mejorar tus habilidades</p>
+          <p>
+            Quieres aprender sobre tecnología y mejorar tus habilidades. Únete a
+            Discord!
+          </p>
           <a
             className="btn yellow"
             target="_blank"
-            href="https://forms.gle/R87ZcpngijKSjZmb8"
+            href="https://discord.com/invite/7bpGcDT"
             rel="noopener noreferrer"
           >
             Quiero ser estudiante
@@ -28,13 +31,11 @@ const JoinUs = () => (
         </div>
         <div className="item__description">
           <h3>Mentor</h3>
-          <p>Quieres compartir tu experiencia con nuevos aspirantes a devs</p>
-          <a
-            className="btn yellow"
-            target="_blank"
-            href="https://forms.gle/GVy8ayWwjqqpgV929"
-            rel="noopener noreferrer"
-          >
+          <p>
+            Quieres compartir tu experiencia con nuevos entusiastas de la
+            tecnología
+          </p>
+          <a className="btn yellow" href="/mentor" rel="noopener noreferrer">
             Quiero ser mentor
           </a>
         </div>
