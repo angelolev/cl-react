@@ -12,8 +12,8 @@ const JoinUsMentor = () => {
           <div className="join__presentation">
             <h1>Mentoría</h1>
             <p>
-              Empezar en el mundo de la tecnología nologia puede ser un poco
-              difícil, habiendo tantos posibles caminos que uno puede tomar.
+              Empezar en el mundo de la tecnología puede ser un poco difícil,
+              habiendo tantos posibles caminos que uno puede tomar.
             </p>
 
             <p>
