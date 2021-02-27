@@ -11,6 +11,10 @@
     background-position: 100% 205px;
   }
 
+  @include breakpoint($lg) {
+    background-position: 100% 140px;
+  }
+
   a {
     display: block;
     margin: 20px auto;

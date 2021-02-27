@@ -52,14 +52,7 @@ const Groups = () => {
         </ul>
         <div className="groups-list">
           {groups.map((group) => {
-            return (
-              <StudyGroup
-                key={group.id}
-                name={group.name}
-                description={group.description}
-                image={group.image}
-              />
-            );
+            return <StudyGroup key={group.id} group={group} />;
           })}
         </div>
       </section>
