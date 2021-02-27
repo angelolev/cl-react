@@ -11,8 +11,9 @@ import Live from "../containers/Live/Live";
 import GroupHtml from "../components/groups/GroupHtml";
 import SessionVideo from "../components/groups/SessionVideo";
 import Course from "../containers/Course/Course";
-import JoinUsStudent from '../containers/JoinUs/JoinUsStudent'
-import JoinUsMentor from '../containers/JoinUs/JoinUsMentor'
+import JoinUsStudent from "../containers/JoinUs/JoinUsStudent";
+import JoinUsMentor from "../containers/JoinUs/JoinUsMentor";
+import NotFound from "../containers/NotFound/NotFound";
 
 import "../styles.scss";
 
@@ -36,6 +37,7 @@ const App = () => (
         <Route exact path="/calendario" component={Calendar} />
         <Route exact path="/estudiante" component={JoinUsStudent} />
         <Route exact path="/mentor" component={JoinUsMentor} />
+        <Route component={NotFound} />
       </Switch>
     </Layout>
   </BrowserRouter>

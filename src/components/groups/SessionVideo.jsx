@@ -69,7 +69,7 @@ const SessionVideo = (props) => {
               className="video"
               src={session[0].urlVideo}
               controls="controls"
-              controlslist="nodownload"
+              controlsList="nodownload"
             ></video>
             <div className="session-video__info">
               <h2>{session[0].title}</h2>

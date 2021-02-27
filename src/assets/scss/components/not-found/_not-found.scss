@@ -1,0 +1,16 @@
+.not-found {
+  text-align: center;
+  padding: 100px 0;
+
+  @include breakpoint($md) {
+    padding: 50px 0 100px;
+  }
+
+  img {
+    max-width: 90%;
+
+    @include breakpoint($sm) {
+      max-width: 500px;
+    }
+  }
+}

@@ -42,6 +42,15 @@ const Nav = () => (
                   Calendario
                 </Link>
               </li>
+              <li>
+                <a
+                  className="scrollable"
+                  href="https://dailybreakpoint.dev"
+                  target="_blank"
+                >
+                  Blog
+                </a>
+              </li>
             </ul>
           </div>
           <div className="nav__button">
@@ -67,13 +76,22 @@ const Nav = () => (
               </a>
             </li>
             <li>
-              <a className="scrollable" href="/talks">
-                Talks
+              <a className="scrollable" href="/mentoria">
+                Mentoría
               </a>
             </li>
             <li>
               <a className="scrollable" href="/calendario">
                 Calendario
+              </a>
+            </li>
+            <li>
+              <a
+                className="scrollable"
+                href="https://dailybreakpoint.dev"
+                target="_blank"
+              >
+                Blog
               </a>
             </li>
           </ul>
