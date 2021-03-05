@@ -26,6 +26,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-checkmark:before {
+  content: "\e907";
+}
+.icon-player:before {
+  content: "\e908";
+}
 .icon-buymeacoffee:before {
   content: "\e906";
 }
