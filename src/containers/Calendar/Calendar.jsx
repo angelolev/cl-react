@@ -34,8 +34,8 @@ const Calendar = () => {
       day: 5,
       name: "VIE",
       category: "live",
-      description: "TBD",
-      time: "8:00pm GMT-5 ",
+      description: "Creando una web desde cero con HTML y CSS",
+      time: "9:00pm GMT-5 ",
     },
     {
       day: 8,
