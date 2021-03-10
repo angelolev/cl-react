@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Home from "../containers/Home/Home";
 import Groups from "../containers/Groups/Groups";
 import Talks from "../containers/Talks/Talks";
@@ -16,8 +16,10 @@ import JoinUsMentor from "../containers/JoinUs/JoinUsMentor";
 import NotFound from "../containers/NotFound/NotFound";
 
 import "../styles.scss";
-
+import Login from "../containers/Login/Login";
+import UserProvider from "../providers/UserProvider";
 const App = () => (
+  <UserProvider>
   <BrowserRouter>
     <Layout>
       <Switch>
@@ -37,10 +39,12 @@ const App = () => (
         <Route exact path="/calendario" component={Calendar} />
         <Route exact path="/estudiante" component={JoinUsStudent} />
         <Route exact path="/mentor" component={JoinUsMentor} />
+        <Route exact path="/login" component={Login} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
   </BrowserRouter>
+  </UserProvider>
 );
 
 export default App;
