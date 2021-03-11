@@ -1,12 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Hero from "../commons/Hero/Hero";
 import heroImage from "./studygroup.svg";
 import Session from "./Session";
 import { db } from "../../services/firebase";
 import Loader from "../loader/Loader";
+import { UserContext } from "../../providers/UserProvider";
+import { Redirect } from "react-router-dom";
 
 const GroupHtml = () => {
   const [sessions, setSessions] = useState([]);
+  const user = useContext(UserContext);
+  const [redirect, setredirect] = useState(null);
+
+  useEffect(() => {
+    if (user == null) {
+      setredirect("/login");
+    }
+  }, [user]);
 
   useEffect(() => {
     db.collection("sessions")
@@ -23,6 +33,10 @@ const GroupHtml = () => {
         setSessions(loadedSessions);
       });
   }, []);
+
+  if (redirect) {
+    return <Redirect to={redirect} />;
+  }
 
   return (
     <>

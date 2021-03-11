@@ -1,21 +1,22 @@
-import React, {useState, useEffect,  createContext} from "react";
-import { auth } from "../services/firebase"
-export const UserContext = createContext({user: null})
-export default ({children}) => {
-  const [user, setuser] = useState(null)
+import React, { useState, useEffect, createContext } from "react";
+import { auth } from "../services/firebase";
+export const UserContext = createContext({ user: null });
+export default (props) => {
+  const userLS = localStorage.getItem("user");
+  const [user, setuser] = useState(userLS);
+
   useEffect(() => {
-auth.onAuthStateChanged(async (user) => {
-  console.log(user, 'user context')
-  if(user !== null) {
-    const { displayName, email }  = user;
-    setuser({
-      displayName,
-      email
-    })
-  }
-})
-  },[])
+    auth.onAuthStateChanged(async (user) => {
+      if (user !== null) {
+        const { displayName, email } = user;
+        setuser({
+          displayName,
+          email,
+        });
+      }
+    });
+  }, []);
   return (
-    <UserContext.Provider value={user}>{children}</UserContext.Provider>
-  )
-}
+    <UserContext.Provider value={user}>{props.children}</UserContext.Provider>
+  );
+};

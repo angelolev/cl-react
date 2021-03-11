@@ -1,32 +1,45 @@
-import React, { useEffect, useContext, useState } from 'react';
-import { signInWithGoogle } from '../../services/firebase';
-import { UserContext } from '../../providers/UserProvider';
-import { Redirect } from 'react-router-dom';
+import React, { useEffect, useContext, useState } from "react";
+import { signInWithGoogle } from "../../services/firebase";
+import { UserContext } from "../../providers/UserProvider";
+import { Redirect } from "react-router-dom";
+import Hero from "../../components/commons/Hero/Hero";
+import heroImage from "./student.svg";
+
 const Login = () => {
-  const user = useContext(UserContext)
-  const [redirect, setredirect] = useState(null)
+  const user = useContext(UserContext);
+  const [redirect, setredirect] = useState(null);
 
   useEffect(() => {
     if (user) {
-      setredirect('/dashboard')
+      setredirect("/clases");
     }
-  }, [user])
+  }, [user]);
+
   if (redirect) {
     return <Redirect to={redirect} />;
   }
+
   return (
-    
-    <div className="">
-        <button className="" onClick={signInWithGoogle}>
-        <img src="https://img.icons8.com/ios-filled/50/000000/google-logo.png" alt="google icon"/>
-        <span> Continue with Google</span>
-      </button>
+    <>
+      <Hero
+        title="Inicia sesión para ver los cursos y talleres"
+        image={heroImage}
+      />
+      <div className="container">
+        <section className="login">
+          <h2>Inicia sesión</h2>
+          <p>
+            Para poder disfrutar del contenido de los cursos y talleres, por
+            favor logueate
+          </p>
+          <button className="login__button" onClick={signInWithGoogle}>
+            <span className="icon icon-google"></span>
+            <span>Continue with Google</span>
+          </button>
+        </section>
       </div>
-    
-  )
-    
-  
-  
-}
+    </>
+  );
+};
 
 export default Login;

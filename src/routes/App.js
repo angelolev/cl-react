@@ -20,30 +20,30 @@ import Login from "../containers/Login/Login";
 import UserProvider from "../providers/UserProvider";
 const App = () => (
   <UserProvider>
-  <BrowserRouter>
-    <Layout>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/admin/recursos" component={Admin} />
-        <Route exact path="/cursos/desarrollo-web" component={Course} />
-        <Route exact path="/live" component={Live} />
-        <Route exact path="/grupos" component={Groups} />
-        <Route exact path="/clases" component={GroupHtml} />
-        <Route exact path="/clases/:group/:link" component={SessionVideo} />
-        <Route
-          exact
-          path="/talks"
-          component={() => <Talks isDashboard="true" />}
-        />
-        <Route exact path="/calendario" component={Calendar} />
-        <Route exact path="/estudiante" component={JoinUsStudent} />
-        <Route exact path="/mentor" component={JoinUsMentor} />
-        <Route exact path="/login" component={Login} />
-        <Route component={NotFound} />
-      </Switch>
-    </Layout>
-  </BrowserRouter>
+    <BrowserRouter>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/admin/recursos" component={Admin} />
+          <Route exact path="/cursos/desarrollo-web" component={Course} />
+          <Route exact path="/live" component={Live} />
+          <Route exact path="/grupos" component={Groups} />
+          <Route exact path="/clases" component={GroupHtml} />
+          <Route exact path="/clases/:group/:link" component={SessionVideo} />
+          <Route
+            exact
+            path="/talks"
+            component={() => <Talks isDashboard="true" />}
+          />
+          <Route exact path="/calendario" component={Calendar} />
+          <Route exact path="/estudiante" component={JoinUsStudent} />
+          <Route exact path="/mentor" component={JoinUsMentor} />
+          <Route exact path="/login" component={Login} />
+          <Route component={NotFound} />
+        </Switch>
+      </Layout>
+    </BrowserRouter>
   </UserProvider>
 );
 
