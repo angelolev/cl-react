@@ -63,7 +63,7 @@ const SessionVideo = (props) => {
     <section className="session-video">
       <div className="container"></div>
       <div className="session-video__media">
-        {session[0] ? (
+        {/* {session[0] ? (
           <>
             <video
               className="video"
@@ -81,7 +81,15 @@ const SessionVideo = (props) => {
           </>
         ) : (
           <Loader />
-        )}
+        )} */}
+        <iframe
+          width="100%"
+          height="496"
+          src="https://www.youtube.com/embed/SbSyt-gaBJw"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
       <div className="session-video__resources">
         {session[0] ? (

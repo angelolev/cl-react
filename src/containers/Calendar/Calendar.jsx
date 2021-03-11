@@ -52,13 +52,16 @@ const Calendar = () => {
     {
       day: 11,
       name: "JUE",
+      category: "read",
+      description: "Club de Lectura - Eloquent Javascript",
+      time: "10:00pm GMT-5 ",
     },
     {
       day: 12,
       name: "VIE",
       category: "live",
-      description: "TBD",
-      time: "8:00pm GMT-5 ",
+      description: "Creando una web desde cero con HTML y CSS - Parte 2",
+      time: "9:15pm GMT-5 ",
     },
     {
       day: 15,
