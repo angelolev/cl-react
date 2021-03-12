@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
-import { signInWithGoogle } from "../../services/firebase";
+import { signIn } from "../../services/firebase";
 import { UserContext } from "../../providers/UserProvider";
 import { Redirect } from "react-router-dom";
 import Hero from "../../components/commons/Hero/Hero";
@@ -32,9 +32,23 @@ const Login = () => {
             Para poder disfrutar del contenido de los cursos y talleres, por
             favor logueate
           </p>
-          <button className="login__button" onClick={signInWithGoogle}>
+          <button
+            className="login__button google"
+            onClick={() => {
+              signIn("Google");
+            }}
+          >
             <span className="icon icon-google"></span>
-            <span>Continue with Google</span>
+            <span>Continuar con Google</span>
+          </button>
+          <button
+            className="login__button github"
+            onClick={() => {
+              signIn("Github");
+            }}
+          >
+            <span className="icon icon-github"></span>
+            <span>Continuar con Github</span>
           </button>
         </section>
       </div>

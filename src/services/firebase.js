@@ -8,9 +8,20 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const db = firebase.firestore();
 const googleProvider = new firebase.auth.GoogleAuthProvider();
-export const signInWithGoogle = () => {
+const githubProvider = new firebase.auth.GithubAuthProvider();
+
+const getCurrentProvider = (provider) => {
+  switch (provider) {
+    case "Google":
+      return googleProvider;
+    case "Github":
+      return githubProvider;
+  }
+};
+
+export const signIn = (provider) => {
   auth
-    .signInWithPopup(googleProvider)
+    .signInWithPopup(getCurrentProvider(provider))
     .then((res) => {
       localStorage.setItem("user", res.user);
     })

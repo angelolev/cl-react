@@ -11,13 +11,20 @@
   }
 
   &__button {
-    background-color: #3498db;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 30px;
+    margin: 0 auto 20px;
     padding: 20px 10px;
     width: 100%;
+
+    &.google {
+      background-color: #3498db;
+    }
+
+    &.github {
+      background-color: #121212;
+    }
 
     .icon {
       font-size: 20px;
