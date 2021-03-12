@@ -19,7 +19,7 @@ const GroupHtml = () => {
   }, [user]);
 
   useEffect(() => {
-    db.collection("sessions")
+    db.collection("html")
       .orderBy("group")
       .orderBy("title")
       .get()
@@ -40,11 +40,11 @@ const GroupHtml = () => {
 
   return (
     <>
-      <Hero title="Grupo de Estudio HTML, CSS y Javascript" image={heroImage} />
+      <Hero title="Curso de HTML" image={heroImage} />
       <section className="study-group">
         <div className="container">
           <div className="study-group__title">
-            <h3>Bienvenid@ al grupo de estudio HTML, CSS y Javascript.</h3>
+            <h3>Bienvenid@ al curso de HTML.</h3>
           </div>
           <div className="study-group__description">
             <p>
