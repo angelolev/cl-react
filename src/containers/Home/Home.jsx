@@ -9,6 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     db.collection("recommendedCourses")
+      .orderBy("id")
       .get()
       .then((querySnapshot) => {
         const loadedCourses = [];

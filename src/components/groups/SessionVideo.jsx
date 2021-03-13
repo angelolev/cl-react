@@ -39,7 +39,7 @@ const SessionVideo = (props) => {
   const group = props.match.params.group;
 
   useEffect(() => {
-    db.collection("sessions")
+    db.collection("html")
       .get()
       .then((querySnapshot) => {
         const loadedSessions = [];
@@ -65,12 +65,20 @@ const SessionVideo = (props) => {
       <div className="session-video__media">
         {session[0] ? (
           <>
-            <video
+            {/* <video
               className="video"
               src={session[0].urlVideo}
               controls="controls"
               controlsList="nodownload"
-            ></video>
+            ></video> */}
+            <iframe
+              width="100%"
+              height="496"
+              src={session[0].urlVideo}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
             <div className="session-video__info">
               <h2>{session[0].title}</h2>
               <p>{session[0].description}</p>
@@ -82,14 +90,6 @@ const SessionVideo = (props) => {
         ) : (
           <Loader />
         )}
-        {/* <iframe
-          width="100%"
-          height="496"
-          src="https://www.youtube.com/embed/SbSyt-gaBJw"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe> */}
       </div>
       <div className="session-video__resources">
         {session[0] ? (

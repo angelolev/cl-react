@@ -29,7 +29,7 @@ const RecommendedCourseCard = (props) => {
       {status ? (
         <div className="recommended-course__button">
           <a className="yellow" href={link}>
-            Registrarme
+            Ir al Curso
           </a>
         </div>
       ) : (
