@@ -1,10 +1,6 @@
 .articles {
   &__list {
     padding: 30px 0;
-
-    @include breakpoint($md) {
-      min-height: 320px;
-    }
   }
 
   &__item {

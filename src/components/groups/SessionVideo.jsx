@@ -99,6 +99,7 @@ const SessionVideo = (props) => {
         ) : null}
         {/* <Questions questions={sessionQuestions} /> */}
         <Membership />
+        <Certification />
       </div>
     </section>
   );
