@@ -5,6 +5,7 @@ import Membership from "../dashboard/Membership/Membership";
 import { db } from "../../services/firebase";
 import Loader from "../loader/Loader";
 import { Link } from "react-router-dom";
+import Certification from "../dashboard/Certification/Certification";
 
 const sessionQuestions = {
   title: "Preguntas de la clase",
