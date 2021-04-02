@@ -8,7 +8,7 @@ moment.locale("es");
 
 const Calendar = () => {
   function getTime(day) {
-    const date = new Date(`March ${day}, 2021 20:00:00 GMT-05:00`);
+    const date = new Date(`April ${day}, 2021 20:00:00 GMT-05:00`);
     // const date = new Date(2020, 8, day, 20, 0, 0);
     return " " + moment(date).fromNow();
   }
@@ -120,6 +120,115 @@ const Calendar = () => {
     {
       day: 31,
       name: "MIE",
+    },
+  ];
+
+  const abril = [
+    {
+      day: 1,
+      name: "JUE",
+    },
+    {
+      day: 2,
+      name: "VIE",
+      category: "live",
+      description: "Marketing para DEVS",
+      time: "7:00pm GMT-5 ",
+    },
+    {
+      day: 4,
+      name: "LUN",
+    },
+    {
+      day: 5,
+      name: "MAR",
+    },
+    {
+      day: 6,
+      name: "MIE",
+    },
+    {
+      day: 7,
+      name: "JUE",
+    },
+    {
+      day: 8,
+      name: "VIE",
+      category: "live",
+      description: "TBD",
+      time: "8:00pm GMT-5 ",
+    },
+    {
+      day: 11,
+      name: "LUN",
+    },
+    {
+      day: 12,
+      name: "MAR",
+    },
+    {
+      day: 13,
+      name: "MIE",
+    },
+    {
+      day: 14,
+      name: "JUE",
+      category: "estreno",
+      description: "Curso de CSS",
+      time: "8:00pm GMT-5 ",
+    },
+    {
+      day: 15,
+      name: "VIE",
+      category: "live",
+      description: "TBD",
+      time: "8:00pm GMT-5 ",
+    },
+    {
+      day: 18,
+      name: "LUN",
+    },
+    {
+      day: 19,
+      name: "MAR",
+    },
+    {
+      day: 20,
+      name: "MIE",
+    },
+    {
+      day: 21,
+      name: "JUE",
+    },
+    {
+      day: 22,
+      name: "VIE",
+      category: "live",
+      description: "TBD",
+      time: "8:00pm GMT-5 ",
+    },
+    {
+      day: 25,
+      name: "LUN",
+    },
+    {
+      day: 26,
+      name: "MAR",
+    },
+    {
+      day: 27,
+      name: "MIE",
+    },
+    {
+      day: 28,
+      name: "JUE",
+    },
+    {
+      day: 30,
+      name: "VIE",
+      category: "live",
+      description: "TBD",
+      time: "8:00pm GMT-5 ",
     },
   ];
 
@@ -287,7 +396,7 @@ const Calendar = () => {
     },
   ];
 
-  const currentMonth = marzo.map((item) => {
+  const currentMonth = abril.map((item) => {
     return {
       ...item,
       timeAgo: getTime(item.day),
@@ -308,6 +417,9 @@ const Calendar = () => {
           <div className="calendar__header">JUE</div>
           <div className="calendar__header">VIE</div>
           {/* <div className="calendar__item vacio"></div> */}
+          <div className="calendar__item vacio"></div>
+          <div className="calendar__item vacio"></div>
+          <div className="calendar__item vacio"></div>
           {calendar.map((item, id) => {
             return (
               <div className="calendar__item" key={id}>

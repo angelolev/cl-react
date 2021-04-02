@@ -1,7 +1,7 @@
 import React from "react";
 
 const RecommendedCourseCard = (props) => {
-  const { status, image, title, description, link } = props.course;
+  const { status, image, title, description, link, releaseDate } = props.course;
 
   let courseCardClasses = "recommended-course";
   const statusName = !status ? "Muy pronto" : "";
@@ -13,9 +13,9 @@ const RecommendedCourseCard = (props) => {
   return (
     <div className={courseCardClasses} id="courses">
       {!status ? (
-        <span className="recommended-course__status">{statusName}</span>
+        <span className="recommended-course__status">{releaseDate}</span>
       ) : (
-        false
+        <span className="recommended-course__status available">Disponible</span>
       )}
       <div className="recommended-course__image">
         <img src={`./images/${image}`} alt="" />
