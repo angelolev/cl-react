@@ -92,6 +92,10 @@
     position: absolute;
     top: 10px;
     right: 15px;
-    padding: 5px 10px;
+    padding: 8px 15px;
+
+    &.available {
+      background-color: #27ae60;
+    }
   }
 }
