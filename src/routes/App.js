@@ -9,6 +9,7 @@ import Dashboard from "../containers/Dashboard/Dashboard";
 import Calendar from "../containers/Calendar/Calendar";
 import Live from "../containers/Live/Live";
 import GroupHtml from "../components/groups/GroupHtml";
+import GroupCss from "../components/groups/GroupCss";
 import SessionVideo from "../components/groups/SessionVideo";
 import Course from "../containers/Course/Course";
 import JoinUsStudent from "../containers/JoinUs/JoinUsStudent";
@@ -30,6 +31,8 @@ const App = () => (
           <Route exact path="/live" component={Live} />
           <Route exact path="/grupos" component={Groups} />
           <Route exact path="/clases" component={GroupHtml} />
+          <Route exact path="/clases/css" component={GroupCss} />
+          <Route exact path="/clases/html" component={GroupHtml} />
           <Route exact path="/clases/:group/:link" component={SessionVideo} />
           <Route
             exact

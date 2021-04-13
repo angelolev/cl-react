@@ -7,40 +7,13 @@ import Loader from "../loader/Loader";
 import { Link } from "react-router-dom";
 import Certification from "../dashboard/Certification/Certification";
 
-const sessionQuestions = {
-  title: "Preguntas de la clase",
-  questionsList: [
-    {
-      id: 0,
-      title: "Que estas aprendiendo hoy?",
-      comments: 20,
-      likes: 3,
-      link: "/que-estas-aprendiendo-hoy",
-    },
-    {
-      id: 1,
-      title: "Que estas aprendiendo hoy?",
-      comments: 20,
-      likes: 3,
-      link: "/que-estas-aprendiendo-hoy",
-    },
-    {
-      id: 2,
-      title: "Que estas aprendiendo hoy?",
-      comments: 20,
-      likes: 3,
-      link: "/que-estas-aprendiendo-hoy",
-    },
-  ],
-};
-
 const SessionVideo = (props) => {
   const [session, setSession] = useState([]);
   const link = props.match.params.link;
   const group = props.match.params.group;
 
   useEffect(() => {
-    db.collection("html")
+    db.collection(group)
       .get()
       .then((querySnapshot) => {
         const loadedSessions = [];

@@ -7,7 +7,7 @@ import Loader from "../loader/Loader";
 import { UserContext } from "../../providers/UserProvider";
 import { Redirect } from "react-router-dom";
 
-const GroupHtml = () => {
+const GroupCss = () => {
   const [sessions, setSessions] = useState([]);
   const user = useContext(UserContext);
   const [redirect, setredirect] = useState(null);
@@ -19,7 +19,7 @@ const GroupHtml = () => {
   }, [user]);
 
   useEffect(() => {
-    db.collection("html")
+    db.collection("css")
       .orderBy("group")
       .orderBy("title")
       .get()
@@ -40,11 +40,11 @@ const GroupHtml = () => {
 
   return (
     <>
-      <Hero title="Curso de HTML" image={heroImage} />
+      <Hero title="Curso de CSS" image={heroImage} />
       <section className="study-group">
         <div className="container">
           <div className="study-group__title">
-            <h3>Bienvenid@ al curso de HTML.</h3>
+            <h3>Bienvenid@ al curso de CSS.</h3>
           </div>
           <div className="study-group__description">
             <p>
@@ -77,4 +77,4 @@ const GroupHtml = () => {
   );
 };
 
-export default GroupHtml;
+export default GroupCss;
