@@ -8,7 +8,7 @@ const Articles = (props) => {
   const id = props.id ? props.id : "";
 
   useEffect(() => {
-    db.collection("htmlresources")
+    db.collection("resources")
       .where("session_id", "==", id)
       .get()
       .then((querySnapshot) => {
