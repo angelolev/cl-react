@@ -2,6 +2,8 @@ import React from "react";
 import htmlImage from "./html5.png";
 import cssImage from "./css.png";
 import jsImage from "./js.png";
+import responsiveImage from "./responsive.png";
+import flexboxImage from "./flexbox.png";
 import { Link } from "react-router-dom";
 
 const verifyType = (type) => {
@@ -12,6 +14,10 @@ const verifyType = (type) => {
       return cssImage;
     case "js":
       return jsImage;
+    case "responsive":
+      return responsiveImage;
+    case "flexbox":
+      return flexboxImage;
     default:
       break;
   }
