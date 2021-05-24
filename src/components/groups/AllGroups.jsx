@@ -7,8 +7,12 @@ import Loader from "../loader/Loader";
 import { UserContext } from "../../providers/UserProvider";
 import { Redirect } from "react-router-dom";
 
-const GroupHtml = () => {
+const AllGroups = () => {
   const [sessions, setSessions] = useState([]);
+  const [htmlSessions, setHtmlSessions] = useState([]);
+  const [cssSessions, setCssSessions] = useState([]);
+  const [responsiveSessions, setResponsiveSessions] = useState([]);
+  const [flexboxSessions, setFlexboxSessions] = useState([]);
   const user = useContext(UserContext);
   const [redirect, setredirect] = useState(null);
 
@@ -30,9 +34,68 @@ const GroupHtml = () => {
           currentDoc.id = doc.id;
           loadedSessions.push(currentDoc);
         });
-        setSessions(loadedSessions);
+        setHtmlSessions(loadedSessions);
       });
   }, []);
+
+  useEffect(() => {
+    db.collection("css")
+      .orderBy("group")
+      .orderBy("title")
+      .get()
+      .then((querySnapshot) => {
+        const loadedSessions = [];
+        querySnapshot.forEach((doc) => {
+          const currentDoc = doc.data();
+          currentDoc.id = doc.id;
+          loadedSessions.push(currentDoc);
+        });
+        setCssSessions(loadedSessions);
+      });
+  }, []);
+
+  useEffect(() => {
+    db.collection("responsive")
+      .orderBy("group")
+      .orderBy("title")
+      .get()
+      .then((querySnapshot) => {
+        const loadedSessions = [];
+        querySnapshot.forEach((doc) => {
+          const currentDoc = doc.data();
+          currentDoc.id = doc.id;
+          loadedSessions.push(currentDoc);
+        });
+        setResponsiveSessions(loadedSessions);
+      });
+  }, []);
+
+  useEffect(() => {
+    db.collection("flexbox")
+      .orderBy("group")
+      .orderBy("title")
+      .get()
+      .then((querySnapshot) => {
+        const loadedSessions = [];
+        querySnapshot.forEach((doc) => {
+          const currentDoc = doc.data();
+          currentDoc.id = doc.id;
+          loadedSessions.push(currentDoc);
+        });
+        setFlexboxSessions(loadedSessions);
+      });
+  }, []);
+
+  useEffect(() => {
+    const allSessions = [
+      ...htmlSessions,
+      ...cssSessions,
+      ...responsiveSessions,
+      ...flexboxSessions,
+    ];
+
+    setSessions(allSessions);
+  }, [flexboxSessions]);
 
   if (redirect) {
     return <Redirect to={redirect} />;
@@ -77,4 +140,4 @@ const GroupHtml = () => {
   );
 };
 
-export default GroupHtml;
+export default AllGroups;

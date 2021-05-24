@@ -8,6 +8,7 @@ import Admin from "../containers/Admin/Admin";
 import Dashboard from "../containers/Dashboard/Dashboard";
 import Calendar from "../containers/Calendar/Calendar";
 import Live from "../containers/Live/Live";
+import AllGroups from '../components/groups/AllGroups';
 import GroupHtml from "../components/groups/GroupHtml";
 import GroupCss from "../components/groups/GroupCss";
 import GroupResponsive from "../components/groups/GroupResponsive";
@@ -32,7 +33,7 @@ const App = () => (
           <Route exact path="/cursos/desarrollo-web" component={Course} />
           <Route exact path="/live" component={Live} />
           <Route exact path="/grupos" component={Groups} />
-          <Route exact path="/clases" component={GroupHtml} />
+          <Route exact path="/clases" component={AllGroups} />
           <Route exact path="/clases/css" component={GroupCss} />
           <Route exact path="/clases/html" component={GroupHtml} />
           <Route exact path="/clases/responsive-design" component={GroupResponsive} />
