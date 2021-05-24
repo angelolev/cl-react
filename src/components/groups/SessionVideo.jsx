@@ -27,6 +27,8 @@ const SessionVideo = (props) => {
         );
         setSession(loadedSession);
       });
+
+    window.scrollTo(0, 0);
   }, []);
 
   const formatTitle = (link, title) => {
