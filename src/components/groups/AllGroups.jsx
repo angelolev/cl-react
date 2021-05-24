@@ -107,7 +107,7 @@ const AllGroups = () => {
       <section className="study-group">
         <div className="container">
           <div className="study-group__title">
-            <h3>Bienvenid@ al curso de HTML.</h3>
+            <h3>Lista de clases disponibles</h3>
           </div>
           <div className="study-group__description">
             <p>
