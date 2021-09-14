@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "./logo.png";
 import { Link } from "react-router-dom";
-import { UserContext } from "../../../providers/UserProvider";
-import { logOut } from "../../../services/firebase";
-import { Redirect } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logOutFirebase } from "../../../actions/auth";
 
 const goToHome = () => {
   window.location.href = "/";
@@ -14,22 +13,19 @@ const showMenu = () => {
   navMenu.classList.toggle("show");
 };
 
-const Nav = () => {
-  const user = useContext(UserContext);
-  const [currentUser, setCurrentUser] = useState("Iniciar sesión");
+const Nav = (props) => {
+  const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state.auth);
   const [currentLink, setCurrentLink] = useState("/login");
-
   const userLogout = () => {
-    logOut();
-    goToHome();
+    dispatch(logOutFirebase());
   };
 
   useEffect(() => {
-    if (user !== null) {
-      setCurrentUser(user.displayName);
-      setCurrentLink("/clases");
+    if (currentUser?.displayName) {
+      setCurrentLink("/admin");
     }
-  }, [user]);
+  }, [currentUser]);
 
   return (
     <nav className="nav">
@@ -43,41 +39,34 @@ const Nav = () => {
             <div className="nav__links">
               <ul>
                 <li>
-                  <Link className="scrollable" to="/clases">
-                    Clases
-                  </Link>
+                  <Link to="/clases">Clases</Link>
                 </li>
                 <li>
-                  <Link className="scrollable" to="/grupos">
-                    Grupos de estudio
-                  </Link>
+                  <Link to="/grupos">Grupos de estudio</Link>
                 </li>
                 <li>
-                  <Link className="scrollable" to="/mentor">
-                    Mentoría
-                  </Link>
+                  <Link to="/mentor">Mentoría</Link>
                 </li>
                 <li>
-                  <Link className="scrollable" to="/calendario">
-                    Calendario
-                  </Link>
+                  <Link to="/calendario">Calendario</Link>
                 </li>
                 <li>
-                  <a
-                    className="scrollable"
-                    href="https://dailybreakpoint.dev"
-                    target="_blank"
-                  >
+                  <a href="https://dailybreakpoint.dev" target="_blank">
                     Blog
                   </a>
                 </li>
                 <li>
-                  <Link className="scrollable" to={currentLink}>
-                    <span className="icon icon-user"></span>
-                    {currentUser}
+                  <Link to={currentLink}>
+                    <img
+                      src={currentUser.photoURL}
+                      alt={currentUser.displayName}
+                    />
+                    {currentUser?.displayName
+                      ? currentUser.displayName
+                      : "Iniciar sesión"}
                   </Link>
                 </li>
-                {user !== null ? (
+                {currentUser?.displayName ? (
                   <li className="btn yellow logout" onClick={userLogout}>
                     Salir
                   </li>
@@ -99,40 +88,38 @@ const Nav = () => {
               </button>
 
               <li>
-                <a className="scrollable" href="/clases">
-                  Clases
-                </a>
+                <Link to="/clases">Clases</Link>
               </li>
               <li>
-                <a className="scrollable" href="/grupos">
-                  Grupos de estudio
-                </a>
+                <Link to="/grupos">Grupos de estudio</Link>
               </li>
               <li>
-                <a className="scrollable" href="/mentoria">
-                  Mentoría
-                </a>
+                <Link to="/mentoria">Mentoría</Link>
               </li>
               <li>
-                <a className="scrollable" href="/calendario">
-                  Calendario
-                </a>
+                <Link to="/calendario">Calendario</Link>
               </li>
               <li>
-                <a
-                  className="scrollable"
-                  href="https://dailybreakpoint.dev"
-                  target="_blank"
-                >
+                <a href="https://dailybreakpoint.dev" target="_blank">
                   Blog
                 </a>
               </li>
               <li>
-                <a className="scrollable" href="/calendario">
-                  {currentUser}
-                </a>
+                <Link to={currentLink}>
+                  <img
+                    src={currentUser.photoURL}
+                    alt={currentUser.displayName}
+                  />
+                  {currentUser?.displayName
+                    ? currentUser.displayName
+                    : "Iniciar sesión"}
+                </Link>
               </li>
-              {user !== null ? <li>Salir</li> : false}
+              {currentUser?.displayName ? (
+                <li onClick={userLogout}>Salir</li>
+              ) : (
+                false
+              )}
             </ul>
           </div>
         </div>

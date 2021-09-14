@@ -1,0 +1,91 @@
+.skeleton {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+
+  &__card {
+    margin-bottom: 30px;
+    width: 100%;
+
+    @include breakpoint($sm) {
+      width: 40%;
+    }
+
+    @include breakpoint($lg) {
+      width: 20%;
+    }
+
+    span span {
+      background-color: white;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    > p {
+      &:last-child {
+        text-align: right;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__video {
+    // height: 210px;
+    margin-bottom: 20px;
+    width: 100%;
+
+    // @include breakpoint($sm) {
+    //   height: 435px;
+    // }
+
+    // @include breakpoint($lg) {
+    //   height: 470px;
+    // }
+    .skeleton__video-title {
+      margin: 20px 0;
+      width: 100%;
+    }
+
+    .skeleton__video-mobile {
+      display: block;
+
+      @include breakpoint($sm) {
+        display: none;
+      }
+    }
+
+    .skeleton__video-tablet {
+      display: none;
+
+      @include breakpoint($sm) {
+        display: block;
+      }
+
+      @include breakpoint($lg) {
+        display: none;
+      }
+    }
+
+    .skeleton__video-desktop {
+      display: none;
+
+      @include breakpoint($lg) {
+        display: block;
+      }
+    }
+
+    .skeleton__video-description {
+      h1 {
+        margin: 20px 0;
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

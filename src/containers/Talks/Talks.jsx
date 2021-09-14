@@ -3,7 +3,7 @@ import Talk from "../../components/commons/Talk/Talk";
 import Hero from "../../components/commons/Hero/Hero";
 import talksImage from "./laptop.webp";
 import { db } from "../../services/firebase";
-import Loader from "../../components/loader/Loader";
+import Loader from "../../components/commons/Loader/Loader";
 
 const Talks = (props) => {
   const [talks, setTalks] = useState([]);

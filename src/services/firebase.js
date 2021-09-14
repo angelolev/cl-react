@@ -7,10 +7,11 @@ firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const db = firebase.firestore();
-const googleProvider = new firebase.auth.GoogleAuthProvider();
-const githubProvider = new firebase.auth.GithubAuthProvider();
 
-const getCurrentProvider = (provider) => {
+export const getCurrentProvider = (provider) => {
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
+  const githubProvider = new firebase.auth.GithubAuthProvider();
+
   switch (provider) {
     case "Google":
       return googleProvider;
@@ -19,24 +20,18 @@ const getCurrentProvider = (provider) => {
   }
 };
 
-export const signIn = (provider) => {
-  auth
-    .signInWithPopup(getCurrentProvider(provider))
-    .then((res) => {
-      localStorage.setItem("user", res.user);
-    })
-    .catch((error) => {
-      console.log(error.message);
-    });
-};
-
-export const logOut = () => {
-  auth
-    .signOut()
-    .then(() => {
-      localStorage.removeItem("user");
-    })
-    .catch((error) => {
-      console.log(error.message);
+export const getFirebaseData = (collection) => {
+  return db
+    .collection(collection)
+    .get()
+    .then((querySnapshot) => {
+      const loadedData = [];
+      querySnapshot.forEach((doc) => {
+        const currentDoc = doc.data();
+        currentDoc.id = doc.id;
+        loadedData.push(currentDoc);
+      });
+      console.log(loadedData, "loaded data from firebase");
+      return loadedData;
     });
 };

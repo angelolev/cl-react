@@ -11,7 +11,7 @@ const Admin = () => {
   });
 
   useEffect(() => {
-    db.collection("sessions")
+    db.collection("css")
       .get()
       .then((querySnapshot) => {
         const loadedSessions = [];

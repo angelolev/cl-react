@@ -3,7 +3,7 @@ import React from "react";
 const RecommendedCourseCard = (props) => {
   const { status, image, title, description, link, releaseDate } = props.course;
 
-  let courseCardClasses = "recommended-course";
+  let courseCardClasses = "recommended-courses__course";
   const statusName = !status ? "Muy pronto" : "";
 
   if (!status) {
@@ -13,21 +13,25 @@ const RecommendedCourseCard = (props) => {
   return (
     <div className={courseCardClasses} id="courses">
       {!status ? (
-        <span className="recommended-course__status">{releaseDate}</span>
+        <span className="recommended-courses__course-status">
+          {releaseDate}
+        </span>
       ) : (
-        <span className="recommended-course__status available">Disponible</span>
+        <span className="recommended-courses__course-status available">
+          Disponible
+        </span>
       )}
-      <div className="recommended-course__image">
+      <div className="recommended-courses__course-image">
         <img src={`./images/${image}`} alt="" />
       </div>
-      <div className="recommended-course__title">
+      <div className="recommended-courses__course-title">
         <h3>{title}</h3>
       </div>
-      <div className="recommended-course__description">
+      <div className="recommended-courses__course-description">
         <p>{description}</p>
       </div>
       {status ? (
-        <div className="recommended-course__button">
+        <div className="recommended-courses__course-button">
           <a className="yellow" href={link}>
             Ir al Curso
           </a>
