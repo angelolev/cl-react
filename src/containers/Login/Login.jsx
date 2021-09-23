@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 import Hero from "../../components/commons/Hero/Hero";
 import heroImage from "./student.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { signInFirebase } from "../../actions/auth";
+import { signInFirebase } from "../../store/actions/auth";
 
 const Login = () => {
   const [redirect, setRedirect] = useState(null);

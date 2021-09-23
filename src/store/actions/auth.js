@@ -1,4 +1,5 @@
-import { signIn, auth, getCurrentProvider } from "../services/firebase";
+import { auth } from "firebase";
+import { getCurrentProvider } from "../../utils";
 import { types } from "../types";
 
 export const login = (uid, displayName, photoURL) => ({

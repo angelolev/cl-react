@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "./logo.png";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { logOutFirebase } from "../../../actions/auth";
+import { logOutFirebase } from "../../../store/actions/auth";
 
 const goToHome = () => {
   window.location.href = "/";

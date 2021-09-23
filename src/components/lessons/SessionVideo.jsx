@@ -4,7 +4,7 @@ import Questions from "../commons/Questions/Questions";
 import Membership from "../dashboard/Membership/Membership";
 import { Link } from "react-router-dom";
 import Certification from "../dashboard/Certification/Certification";
-import { getLesson } from "../../actions/lessons";
+import { getLesson } from "../../store/actions/lessons";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import SessionVideoSkeleton from "../commons/Skeletons/SessionVideoSkeleton";

@@ -10,7 +10,7 @@ import {
   getLessonsFiltered,
   getLessonsFirebase,
   getLessonsCategories,
-} from "../../actions/lessons";
+} from "../../store/actions/lessons";
 import { useParams } from "react-router";
 
 const Lessons = () => {

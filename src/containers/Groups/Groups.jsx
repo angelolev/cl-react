@@ -5,8 +5,8 @@ import Hero from "../../components/commons/Hero/Hero";
 import groupsImage from "./study.png";
 import Loader from "../../components/commons/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
-import { getGroupsFirebase } from "../../actions/groups";
-import { getCategoriesFirebase } from "../../actions/categories";
+import { getGroupsFirebase } from "../../store/actions/groups";
+import { getCategoriesFirebase } from "../../store/actions/categories";
 
 const Groups = () => {
   const dispatch = useDispatch();

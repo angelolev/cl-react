@@ -19,7 +19,7 @@ import "../styles.scss";
 import Login from "../containers/Login/Login";
 import { auth } from "../services/firebase";
 import { useDispatch } from "react-redux";
-import { login } from "../actions/auth";
+import { login } from "../store/actions/auth";
 import Loader from "../components/commons/Loader/Loader";
 
 const App = () => {

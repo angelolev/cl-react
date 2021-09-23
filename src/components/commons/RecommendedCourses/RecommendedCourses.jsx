@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import RecommendedCourseCard from "../RecommendedCourses/RecommendedCourseCard";
 import { useDispatch, useSelector } from "react-redux";
-import { getRecommendedCoursesFirebase } from "../../../actions/recommendedCourses-actions";
+import { getRecommendedCoursesFirebase } from "../../../store/actions/recommendedCourses-actions";
 import CardSkeleton from "../Skeletons/CardSkeleton";
 
 const RecommendedCourses = () => {

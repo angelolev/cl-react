@@ -1,11 +1,11 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
-import { authReducer } from "../reducers/auth";
-import { recommendedCoursesReducer } from "../reducers/recommendedCourses-reducers";
-import { groupsReducer } from "../reducers/groups";
-import { categoriesReducer } from "../reducers/categories";
-import { lessonsReducer } from "../reducers/lessons";
+import { authReducer } from "./reducers/auth";
+import { recommendedCoursesReducer } from "./reducers/recommendedCourses-reducers";
+import { groupsReducer } from "./reducers/groups";
+import { categoriesReducer } from "./reducers/categories";
+import { lessonsReducer } from "./reducers/lessons";
 
 const composeEnhancers =
   (typeof window !== "undefined" &&
