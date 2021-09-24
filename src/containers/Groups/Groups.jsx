@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Category from "../../components/commons/Filters/CategoryFilter";
+import CategoryFilter from "../../components/commons/Filters/CategoryFilter";
 import StudyGroup from "../../components/commons/StudyGroup/StudyGroup";
 import Hero from "../../components/commons/Hero/Hero";
 import groupsImage from "./study.png";
@@ -18,6 +18,10 @@ const Groups = () => {
     dispatch(getCategoriesFirebase());
   }, []);
 
+  const handleFilter = () => {
+    console.log("filtrando");
+  };
+
   return (
     <div className="groups">
       <Hero
@@ -28,9 +32,10 @@ const Groups = () => {
       <section className="groups__description">
         {categories?.categories ? null : <Loader />}
         <ul className="groups__tags">
-          {categories.categories?.map((category) => {
-            return <Category key={category.id} name={category.name} />;
-          })}
+          <CategoryFilter
+            categories={categories?.categories}
+            handleFilter={handleFilter}
+          />
         </ul>
         <div className="groups__list">
           {groups.groups?.map((group) => {

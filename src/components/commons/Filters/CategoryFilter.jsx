@@ -1,11 +1,22 @@
 import React from "react";
+import Badge from "../../elements/Badge/Badge";
 
-const Category = (props) => {
-  const handlefilter = () => {
-    console.log(props.name);
-  };
-
-  return <li onClick={() => handlefilter}>{props.name}</li>;
+const CategoryFilter = ({ categories, handleFilter }) => {
+  return (
+    <ul className="category-filter">
+      {categories?.map((category) => {
+        return (
+          <Badge
+            elementClass={`category-filter__item ${category.type}`}
+            handleClick={() => handleFilter(category.type)}
+            name={category.name}
+            key={category.id}
+            type={category.type}
+          />
+        );
+      })}
+    </ul>
+  );
 };
 
-export default Category;
+export default CategoryFilter;

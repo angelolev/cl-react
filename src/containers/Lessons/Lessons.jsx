@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Hero from "../../components/commons/Hero/Hero";
 import LessonCard from "../../components/lessons/LessonCard";
 import CardSkeleton from "../../components/commons/Skeletons/CardSkeleton";
+import CategoryFilter from "../../components/commons/Filters/CategoryFilter";
 import heroImage from "../../components/lessons/studygroup.svg";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -36,18 +37,22 @@ const Lessons = () => {
 
   const lessonsCategories = [
     {
+      id: 1,
       name: "HTML",
       type: "html",
     },
     {
+      id: 2,
       name: "CSS",
       type: "css",
     },
     {
+      id: 3,
       name: "Responsive Design",
       type: "responsive-design",
     },
     {
+      id: 4,
       name: "Flexbox",
       type: "flexbox",
     },
@@ -62,17 +67,11 @@ const Lessons = () => {
       )}
       <section className="lessons">
         <div className="container">
-          <div>
-            <ul>
-              {lessonsCategories.map((category, index) => {
-                return (
-                  <li key={index} onClick={() => handleFilter(category.type)}>
-                    {category.name}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          <CategoryFilter
+            categories={lessonsCategories}
+            handleFilter={handleFilter}
+          />
+
           <div className="lessons__title">
             <h3>Lista de clases disponibles</h3>
           </div>
