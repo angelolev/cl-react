@@ -21,13 +21,21 @@ const Membership = () => {
       <div className="membership__list">
         <div className="membership__item">
           <i className="icon icon-patreon"></i>{" "}
-          <a target="_blank" href="https://www.patreon.com/codinglatam">
+          <a
+            target="_blank"
+            href="https://www.patreon.com/codinglatam"
+            rel="noopener noreferrer"
+          >
             Patreon
           </a>
         </div>
         <div className="membership__item">
           <i className="icon icon-buymeacoffee"></i>{" "}
-          <a target="_blank" href="https://www.buymeacoffee.com/codinglatam">
+          <a
+            target="_blank"
+            href="https://www.buymeacoffee.com/codinglatam"
+            rel="noopener noreferrer"
+          >
             Buymeacoffee
           </a>
         </div>

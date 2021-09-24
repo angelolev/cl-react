@@ -3,7 +3,7 @@ import htmlImage from "../assets/images/html5.png";
 import jsImage from "../assets/images/js.png";
 import responsiveImage from "../assets/images/responsive.png";
 import flexboxImage from "../assets/images/flexbox.png";
-import { auth } from "firebase";
+import firebase from "firebase";
 
 export const getCourseImage = (course) => {
   switch (course) {
@@ -23,13 +23,15 @@ export const getCourseImage = (course) => {
 };
 
 export const getCurrentProvider = (provider) => {
-  const googleProvider = new auth.GoogleAuthProvider();
-  const githubProvider = new auth.GithubAuthProvider();
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
+  const githubProvider = new firebase.auth.GithubAuthProvider();
 
   switch (provider) {
     case "Google":
       return googleProvider;
     case "Github":
       return githubProvider;
+    default:
+      break;
   }
 };

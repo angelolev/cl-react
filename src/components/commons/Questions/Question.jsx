@@ -1,18 +1,29 @@
 import React from "react";
 
-const Question = () => {
+const Question = ({ title, comments, likes, link }) => {
+  const handleAnswer = () => {
+    console.log("agregar rpta");
+  };
+
   return (
     <div className="question">
-      <h4 className="question__title">¿Qué estas aprendiendo hoy?</h4>
+      <h4 className="question__title">{title}</h4>
       <span className="question__comments">
-        <i className="icon icon-comment"></i> 40
+        <i className="icon icon-comment"></i> {comments}
       </span>
       <span className="question__likes">
-        <i className="icon icon-like"></i> 20
+        <i className="icon icon-like"></i> {likes}
       </span>
-      <a className="question__join" href="/">
+      {/* <a className="question__join" href="/">
         Únete a la discusion
-      </a>
+      </a> */}
+      <button
+        style={{ backgroundColor: "red" }}
+        type="button"
+        onClick={handleAnswer}
+      >
+        Responder
+      </button>
     </div>
   );
 };

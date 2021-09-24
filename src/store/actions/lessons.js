@@ -1,7 +1,5 @@
 import { types } from "../types";
 import {
-  db,
-  getFirebaseData,
   getFirebaseDataDoubleOrdered,
   getFirebaseDataWithQueryAndOrder,
 } from "../../services/firebase";

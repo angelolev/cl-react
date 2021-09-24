@@ -4,7 +4,6 @@ const RecommendedCourseCard = (props) => {
   const { status, image, title, description, link, releaseDate } = props.course;
 
   let courseCardClasses = "recommended-courses__course";
-  const statusName = !status ? "Muy pronto" : "";
 
   if (!status) {
     courseCardClasses += " unavailable";

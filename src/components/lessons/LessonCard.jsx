@@ -2,9 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { getCourseImage } from "../../utils";
 
-const Lesson = (props) => {
-  const { title, type, description, group, link } = props;
-
+const LessonCard = ({ id, title, type, description, group, link }) => {
   return (
     <div className="lesson">
       <div className="lesson__image">
@@ -21,4 +19,4 @@ const Lesson = (props) => {
   );
 };
 
-export default Lesson;
+export default LessonCard;

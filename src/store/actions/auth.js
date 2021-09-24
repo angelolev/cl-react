@@ -1,4 +1,4 @@
-import { auth } from "firebase";
+import { auth } from "../../services/firebase";
 import { getCurrentProvider } from "../../utils";
 import { types } from "../types";
 

@@ -10,11 +10,12 @@ const Login = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.auth);
 
-  useEffect(() => {
-    if (currentUser) {
-      setRedirect("/clases");
-    }
-  }, []);
+  // useEffect(() => {
+  //   console.log("entre");
+  //   if (currentUser) {
+  //     setRedirect("/clases");
+  //   }
+  // }, []);
 
   if (currentUser?.displayName) {
     return <Redirect to="/clases" />;

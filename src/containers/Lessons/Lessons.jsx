@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Hero from "../../components/commons/Hero/Hero";
-import Loader from "../../components/commons/Loader/Loader";
-import Lesson from "../../components/lessons/Lesson";
+import LessonCard from "../../components/lessons/LessonCard";
 import CardSkeleton from "../../components/commons/Skeletons/CardSkeleton";
-import Category from "../../components/commons/Filters/CategoryFilter";
 import heroImage from "../../components/lessons/studygroup.svg";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getLessonsFiltered,
   getLessonsFirebase,
-  getLessonsCategories,
 } from "../../store/actions/lessons";
 import { useParams } from "react-router";
 
@@ -27,7 +24,7 @@ const Lessons = () => {
       dispatch(getLessonsFirebase());
       // dispatch(getLessonsCategories());
     }
-  }, []);
+  }, [type, dispatch]);
 
   // useEffect(() => {
   //   dispatch(getLessonsCategories());
@@ -89,7 +86,7 @@ const Lessons = () => {
             <div className="lessons__list">
               {sessions.lessons.map((session) => {
                 return (
-                  <Lesson
+                  <LessonCard
                     key={session.id}
                     title={session.title}
                     type={session.type}

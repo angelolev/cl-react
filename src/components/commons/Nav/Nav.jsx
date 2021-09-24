@@ -22,6 +22,7 @@ const Nav = (props) => {
   };
 
   useEffect(() => {
+    console.log(currentUser, "usuario");
     if (currentUser?.displayName) {
       setCurrentLink("/admin");
     }
@@ -51,7 +52,11 @@ const Nav = (props) => {
                   <Link to="/calendario">Calendario</Link>
                 </li>
                 <li>
-                  <a href="https://dailybreakpoint.dev" target="_blank">
+                  <a
+                    href="https://dailybreakpoint.dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Blog
                   </a>
                 </li>
@@ -76,9 +81,9 @@ const Nav = (props) => {
               </ul>
             </div>
             <div className="nav__button">
-              <a className="btn yellow scrollable" onClick={showMenu}>
+              <button className="btn yellow scrollable" onClick={showMenu}>
                 Menú
-              </a>
+              </button>
             </div>
           </div>
           <div className="nav__bottom">
@@ -100,7 +105,11 @@ const Nav = (props) => {
                 <Link to="/calendario">Calendario</Link>
               </li>
               <li>
-                <a href="https://dailybreakpoint.dev" target="_blank">
+                <a
+                  href="https://dailybreakpoint.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Blog
                 </a>
               </li>

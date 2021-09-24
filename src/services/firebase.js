@@ -8,18 +8,6 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const db = firebase.firestore();
 
-// export const getCurrentProvider = (provider) => {
-//   const googleProvider = new auth.GoogleAuthProvider();
-//   const githubProvider = new auth.GithubAuthProvider();
-
-//   switch (provider) {
-//     case "Google":
-//       return googleProvider;
-//     case "Github":
-//       return githubProvider;
-//   }
-// };
-
 export const getFirebaseData = (collection) => {
   return db
     .collection(collection)
@@ -76,7 +64,6 @@ export const getFirebaseDataDoubleOrdered = (
 };
 
 export const getFirebaseDataWithQueryAndOrder = (collection, query, order) => {
-  console.log(query, "x");
   return db
     .collection(collection)
     .where(...query)

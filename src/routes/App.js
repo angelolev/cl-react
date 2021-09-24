@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "../containers/Home/Home";
 import Groups from "../containers/Groups/Groups";
 import Talks from "../containers/Talks/Talks";
@@ -7,7 +7,7 @@ import Layout from "../components/commons/Layout/Layout";
 import Admin from "../containers/Admin/Admin";
 import Dashboard from "../containers/Dashboard/Dashboard";
 import Calendar from "../containers/Calendar/Calendar";
-import SessionVideo from "../components/lessons/SessionVideo";
+import LessonVideo from "../components/lessons/LessonVideo";
 import Course from "../containers/Course/Course";
 import JoinUsStudent from "../containers/JoinUs/JoinUsStudent";
 import JoinUsMentor from "../containers/JoinUs/JoinUsMentor";
@@ -51,12 +51,20 @@ const App = () => {
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/admin/recursos" component={Admin} />
           <Route exact path="/cursos/desarrollo-web" component={Course} />
-          <PrivateRoute isLoggedIn={isLoggedIn} path="/grupos">
-            <Groups />
+          <Route exact path="/grupos" component={Groups} />
+          <PrivateRoute isAuthenticated={isLoggedIn} path="/clases/:type">
+            <Lessons />
           </PrivateRoute>
-          <Route exact path="/clases/:type" component={Lessons} />
-          <Route exact path="/clases" component={Lessons} />
-          <Route exact path="/clases/:group/:link" component={SessionVideo} />
+          <PrivateRoute isAuthenticated={isLoggedIn} path="/clases">
+            <Lessons />
+          </PrivateRoute>
+          <PrivateRoute
+            isAuthenticated={isLoggedIn}
+            path="/clases/:group/:link"
+          >
+            <LessonVideo />
+          </PrivateRoute>
+
           <Route
             exact
             path="/talks"
