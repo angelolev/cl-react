@@ -1,7 +1,7 @@
 import { types } from "../types";
 import {
-  getFirebaseDataDoubleOrdered,
-  getFirebaseDataWithQueryAndOrder,
+  getFirebaseCollectionDataDoubleOrdered,
+  getFirebaseCollectionDataWithQueryAndOrder,
   addQuestionOnLessonFirebase,
   getFirebaseDocData,
 } from "../../services/firebase";
@@ -33,7 +33,7 @@ export const addQuestionLike = (lesson) => ({
 
 export const getLessonsFirebase = () => {
   return async (dispatch) => {
-    const response = await getFirebaseDataDoubleOrdered(
+    const response = await getFirebaseCollectionDataDoubleOrdered(
       "lessons",
       "group",
       "title"
@@ -44,7 +44,7 @@ export const getLessonsFirebase = () => {
 
 export const getLessonsFiltered = (type) => {
   return async (dispatch) => {
-    const response = await getFirebaseDataWithQueryAndOrder(
+    const response = await getFirebaseCollectionDataWithQueryAndOrder(
       "lessons",
       ["type", "==", type],
       "title"
@@ -62,18 +62,7 @@ export const getLesson = (id) => {
 
 export const addQuestionOnLesson = (question, id) => {
   return async (dispatch) => {
-    const response = await addQuestionOnLessonFirebase(question, id);
+    await addQuestionOnLessonFirebase(question, id);
     dispatch(addQuestion(question));
   };
 };
-
-// export const addQuestionLike = (questionId) => {
-//   return async (dispatch) => {};
-// };
-
-// export const getLessonsCategories = () => {
-//   return async (dispatch) => {
-//     const response = await getFirebaseDataOrdered("lessons", "id");
-//     dispatch(setLessonsCategories(response));
-//   };
-// };

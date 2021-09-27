@@ -1,7 +1,7 @@
 import React from "react";
 
-const StudyGroup = (props) => {
-  const { link, image, name, description } = props.group;
+const StudyGroup = ({ group }) => {
+  const { link, image, name, description } = group;
 
   const goToLink = (URL) => {
     window.open(URL, "_blank");
@@ -15,10 +15,10 @@ const StudyGroup = (props) => {
       }}
     >
       <div className="group__image">
-        <img src={image} alt="" />
+        <img src={image} alt={name} />
       </div>
       <div className="group__description">
-        <h3>{[name]}</h3>
+        <h3>{name}</h3>
         <p>{description}</p>
       </div>
     </div>

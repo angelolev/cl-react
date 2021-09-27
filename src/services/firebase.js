@@ -8,7 +8,7 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const db = firebase.firestore();
 
-export const getFirebaseData = (collection) => {
+export const getFirebaseCollectionData = (collection) => {
   return db
     .collection(collection)
     .get()
@@ -41,7 +41,7 @@ export const getFirebaseDocData = (collection, docId) => {
     });
 };
 
-export const getFirebaseDataOrdered = (collection, order) => {
+export const getFirebaseCollectionDataOrdered = (collection, order) => {
   return db
     .collection(collection)
     .orderBy(order)
@@ -58,7 +58,7 @@ export const getFirebaseDataOrdered = (collection, order) => {
     });
 };
 
-export const getFirebaseDataDoubleOrdered = (
+export const getFirebaseCollectionDataDoubleOrdered = (
   collection,
   firstOrder,
   secondOrder
@@ -80,7 +80,11 @@ export const getFirebaseDataDoubleOrdered = (
     });
 };
 
-export const getFirebaseDataWithQueryAndOrder = (collection, query, order) => {
+export const getFirebaseCollectionDataWithQueryAndOrder = (
+  collection,
+  query,
+  order
+) => {
   return db
     .collection(collection)
     .where(...query)

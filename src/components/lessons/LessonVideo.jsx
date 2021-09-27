@@ -18,22 +18,6 @@ const SessionVideo = (props) => {
   const lesson = currentLesson?.lesson;
   const { group, id } = useParams();
 
-  // const initialQuestions = [
-  //   {
-  //     id: "1",
-  //     title: "pregunta 1",
-  //     comments: [],
-  //     likes: 0,
-  //     link: "http://link",
-  //   },
-  //   {
-  //     id: "2",
-  //     title: "pregunta 2",
-  //     comments: [],
-  //     likes: 0,
-  //     link: "http://link",
-  //   },
-  // ];
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
@@ -113,11 +97,6 @@ const SessionVideo = (props) => {
         )}
       </div>
       <div className="lesson__video-resources">
-        {/* {lesson ? (
-          <>
-            <Articles id={lesson?.id} />
-          </>
-        ) : null} */}
         {lesson ? (
           <>
             <Questions

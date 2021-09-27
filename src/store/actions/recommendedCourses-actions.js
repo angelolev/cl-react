@@ -1,5 +1,5 @@
 import { types } from "../types";
-import { getFirebaseDataOrdered } from "../../services/firebase";
+import { getFirebaseCollectionDataOrdered } from "../../services/firebase";
 
 export const setRecommendedCourses = (courses) => ({
   type: types.setRecommendedCourses,
@@ -8,7 +8,10 @@ export const setRecommendedCourses = (courses) => ({
 
 export const getRecommendedCoursesFirebase = () => {
   return async (dispatch) => {
-    const response = await getFirebaseDataOrdered("recommendedCourses", "id");
+    const response = await getFirebaseCollectionDataOrdered(
+      "recommendedCourses",
+      "id"
+    );
     dispatch(setRecommendedCourses(response));
   };
 };

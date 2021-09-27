@@ -30,15 +30,15 @@ const Groups = () => {
       />
 
       <section className="groups__description">
-        {categories?.categories ? null : <Loader />}
+        {categories?.categoriesList ? null : <Loader />}
         <ul className="groups__tags">
           <CategoryFilter
-            categories={categories?.categories}
+            categories={categories?.categoriesList}
             handleFilter={handleFilter}
           />
         </ul>
         <div className="groups__list">
-          {groups.groups?.map((group) => {
+          {groups.groupsList?.map((group) => {
             return <StudyGroup key={group.id} group={group} />;
           })}
         </div>

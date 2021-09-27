@@ -1,5 +1,5 @@
 import { types } from "../types";
-import { getFirebaseData } from "../../services/firebase";
+import { getFirebaseCollectionData } from "../../services/firebase";
 
 export const setCategories = (categories) => ({
   type: types.setCategories,
@@ -8,7 +8,7 @@ export const setCategories = (categories) => ({
 
 export const getCategoriesFirebase = () => {
   return async (dispatch) => {
-    const response = await getFirebaseData("categories");
+    const response = await getFirebaseCollectionData("categories");
     dispatch(setCategories(response));
   };
 };

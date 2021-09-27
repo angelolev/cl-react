@@ -1,5 +1,5 @@
 import { types } from "../types";
-import { getFirebaseData } from "../../services/firebase";
+import { getFirebaseCollectionData } from "../../services/firebase";
 
 export const setGroups = (groups) => ({
   type: types.setGroups,
@@ -8,7 +8,7 @@ export const setGroups = (groups) => ({
 
 export const getGroupsFirebase = () => {
   return async (dispatch) => {
-    const response = await getFirebaseData("groups");
+    const response = await getFirebaseCollectionData("groups");
     dispatch(setGroups(response));
   };
 };

@@ -24,13 +24,8 @@ const Lessons = () => {
       dispatch(getLessonsFiltered(type));
     } else {
       dispatch(getLessonsFirebase());
-      // dispatch(getLessonsCategories());
     }
   }, [type, dispatch]);
-
-  // useEffect(() => {
-  //   dispatch(getLessonsCategories());
-  // }, []);
 
   const handleFilter = (type) => {
     dispatch(getLessonsFiltered(type));
@@ -82,9 +77,9 @@ const Lessons = () => {
               los temas de las clases.
             </p>
           </div>
-          {sessions?.lessons ? (
+          {sessions?.lessonsList ? (
             <div className="lessons__list">
-              {sessions.lessons.map((session) => {
+              {sessions.lessonsList.map((session) => {
                 return (
                   <LessonCard
                     key={session.id}

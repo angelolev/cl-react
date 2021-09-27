@@ -1,7 +1,7 @@
 import { types } from "../types";
 
 const INITIAL_STATE = {
-  lessons: null,
+  lessonsList: null,
   currentLesson: null,
   lessonsCategories: null,
 };
@@ -10,7 +10,7 @@ export const lessonsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case types.setLessons:
       return {
-        lessons: action.payload.lessons,
+        lessonsList: action.payload.lessons,
       };
 
     case types.getCurrentLesson:
