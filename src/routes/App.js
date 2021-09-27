@@ -52,7 +52,7 @@ const App = () => {
           <Route exact path="/admin/recursos" component={Admin} />
           <Route exact path="/cursos/desarrollo-web" component={Course} />
           <Route exact path="/grupos" component={Groups} />
-          <PrivateRoute isAuthenticated={isLoggedIn} path="/clases/:type">
+          {/* <PrivateRoute isAuthenticated={isLoggedIn} path="/clases/:type">
             <Lessons />
           </PrivateRoute>
           <PrivateRoute isAuthenticated={isLoggedIn} path="/clases">
@@ -63,7 +63,14 @@ const App = () => {
             path="/clases/:group/:link"
           >
             <LessonVideo />
-          </PrivateRoute>
+          </PrivateRoute> */}
+          <Route exact path="/clases/:type" component={Lessons} />
+          <Route exact path="/clases" component={Lessons} />
+          <Route
+            exact
+            path="/clases/:group/:link/:id"
+            component={LessonVideo}
+          />
 
           <Route
             exact

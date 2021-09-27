@@ -9,6 +9,7 @@
     "firebase": "^7.17.1",
     "loaders.css": "^0.1.2",
     "moment": "^2.27.0",
+    "pushid": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",

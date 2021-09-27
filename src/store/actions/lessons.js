@@ -2,6 +2,8 @@ import { types } from "../types";
 import {
   getFirebaseDataDoubleOrdered,
   getFirebaseDataWithQueryAndOrder,
+  addQuestionOnLessonFirebase,
+  getFirebaseDocData,
 } from "../../services/firebase";
 
 export const setLessons = (lessons) => ({
@@ -17,6 +19,16 @@ export const getCurrentLesson = (lesson) => ({
 export const setLessonsCategories = (categories) => ({
   type: types.setLessonsCategories,
   payload: { categories },
+});
+
+export const addQuestion = (question) => ({
+  type: types.addQuestion,
+  payload: { question },
+});
+
+export const addQuestionLike = (lesson) => ({
+  type: types.addQuestionLike,
+  payload: { lesson },
 });
 
 export const getLessonsFirebase = () => {
@@ -41,16 +53,23 @@ export const getLessonsFiltered = (type) => {
   };
 };
 
-export const getLesson = (link) => {
+export const getLesson = (id) => {
   return async (dispatch) => {
-    const response = await getFirebaseDataWithQueryAndOrder(
-      "lessons",
-      ["link", "==", link],
-      "title"
-    );
+    const response = await getFirebaseDocData("lessons", id);
     dispatch(getCurrentLesson(response));
   };
 };
+
+export const addQuestionOnLesson = (question, id) => {
+  return async (dispatch) => {
+    const response = await addQuestionOnLessonFirebase(question, id);
+    dispatch(addQuestion(question));
+  };
+};
+
+// export const addQuestionLike = (questionId) => {
+//   return async (dispatch) => {};
+// };
 
 // export const getLessonsCategories = () => {
 //   return async (dispatch) => {

@@ -18,6 +18,7 @@ const Lessons = () => {
   const { type } = useParams();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (type) {
       setCurrentType(type);
       dispatch(getLessonsFiltered(type));

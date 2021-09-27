@@ -24,6 +24,23 @@ export const getFirebaseData = (collection) => {
     });
 };
 
+export const getFirebaseDocData = (collection, docId) => {
+  return db
+    .collection(collection)
+    .doc(docId)
+    .get()
+    .then((doc) => {
+      if (doc.exists) {
+        return doc.data();
+      } else {
+        console.log("No existe la clase!");
+      }
+    })
+    .catch((error) => {
+      console.log("Error:", error);
+    });
+};
+
 export const getFirebaseDataOrdered = (collection, order) => {
   return db
     .collection(collection)
@@ -79,4 +96,18 @@ export const getFirebaseDataWithQueryAndOrder = (collection, query, order) => {
 
       return loadedData;
     });
+};
+
+export const addQuestionOnLessonFirebase = async (question, id) => {
+  const response = await db
+    .collection("lessons")
+    .doc(id)
+    .update({
+      questions: firebase.firestore.FieldValue.arrayUnion(question),
+    })
+    .then(() => {
+      console.log("Pregunta agregada");
+    });
+
+  return response;
 };

@@ -4,48 +4,72 @@ import Questions from "../commons/Questions/Questions";
 import Membership from "../dashboard/Membership/Membership";
 import { Link } from "react-router-dom";
 import Certification from "../dashboard/Certification/Certification";
-import { getLesson } from "../../store/actions/lessons";
+import { getLesson, addQuestionOnLesson } from "../../store/actions/lessons";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import SessionVideoSkeleton from "../commons/Skeletons/SessionVideoSkeleton";
+import { db } from "../../services/firebase";
+import firebase from "firebase";
+import { generateId } from "../../utils";
 
 const SessionVideo = (props) => {
   const dispatch = useDispatch();
   const currentLesson = useSelector((state) => state.lessons.currentLesson);
-  const lesson = currentLesson?.lesson[0];
-  const { link, group } = useParams();
+  const lesson = currentLesson?.lesson;
+  const { group, id } = useParams();
 
-  const initialQuestions = [
-    {
-      id: "1",
-      title: "pregunta 1",
-      comments: [],
-      likes: 0,
-      link: "http://link",
-    },
-    {
-      id: "2",
-      title: "pregunta 2",
-      comments: [],
-      likes: 0,
-      link: "http://link",
-    },
-  ];
-  const [questions, setQuestions] = useState(initialQuestions);
+  // const initialQuestions = [
+  //   {
+  //     id: "1",
+  //     title: "pregunta 1",
+  //     comments: [],
+  //     likes: 0,
+  //     link: "http://link",
+  //   },
+  //   {
+  //     id: "2",
+  //     title: "pregunta 2",
+  //     comments: [],
+  //     likes: 0,
+  //     link: "http://link",
+  //   },
+  // ];
+  const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    dispatch(getLesson(link));
+    dispatch(getLesson(id));
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    setQuestions(lesson?.questions);
+  }, [lesson]);
+
+  const handleLikeQuestion = (questionId) => {
+    const tempArray = questions.map((item) => {
+      if (item.id === questionId) {
+        item.likes = item.likes + 1;
+
+        return item;
+      } else {
+        return item;
+      }
+    });
+
+    setQuestions(tempArray);
+  };
+
   const handleAddNewQuestion = (questionTitle) => {
+    const questionId = generateId()();
     const newQuestion = {
-      id: 4,
+      id: questionId,
       title: questionTitle,
       comments: [],
       likes: 0,
-      link: "http://link",
     };
+
+    dispatch(addQuestionOnLesson(newQuestion, id));
+
     const temporalQuestions = [...questions];
     temporalQuestions.push(newQuestion);
     setQuestions(temporalQuestions);
@@ -78,21 +102,34 @@ const SessionVideo = (props) => {
             <div className="lesson__video-link">
               <Link to={`/clases/${group}`}>Regresar</Link>
             </div>
+            {lesson ? (
+              <>
+                <Articles id={lesson?.id} />
+              </>
+            ) : null}
           </>
         ) : (
           <SessionVideoSkeleton />
         )}
       </div>
       <div className="lesson__video-resources">
-        {lesson ? (
+        {/* {lesson ? (
           <>
             <Articles id={lesson?.id} />
           </>
-        ) : null}
-        <Questions
-          questions={questions}
-          addNewQuestion={handleAddNewQuestion}
-        />
+        ) : null} */}
+        {lesson ? (
+          <>
+            <Questions
+              questions={questions}
+              addNewQuestion={handleAddNewQuestion}
+              handleLikeQuestion={handleLikeQuestion}
+            />
+          </>
+        ) : (
+          <h3>Cargando</h3>
+        )}
+
         <Membership />
         <Certification />
       </div>

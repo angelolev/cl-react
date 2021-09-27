@@ -13,7 +13,7 @@ const LessonCard = ({ id, title, type, description, group, link }) => {
         <p>{description}</p>
       </div>
       <div className="lesson__link">
-        <Link to={`/clases/${group}/${link}`}>Ver Ahora</Link>
+        <Link to={`/clases/${group}/${link}/${id}`}>Ver Ahora</Link>
       </div>
     </div>
   );

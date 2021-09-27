@@ -34,7 +34,7 @@ const Questions = ({ questions, addNewQuestion, handleLikeQuestion }) => {
             <Question
               key={question.id}
               title={question.title}
-              comments={question.comments.length}
+              comments={question.comments?.length}
               likes={question.likes}
               handleLikeQuestion={() => handleLikeQuestion(question.id)}
             />
