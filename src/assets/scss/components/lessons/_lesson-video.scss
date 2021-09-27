@@ -63,6 +63,7 @@
     width: 100%;
 
     @include breakpoint($md) {
+      padding-top: 30px;
       width: 70%;
     }
 

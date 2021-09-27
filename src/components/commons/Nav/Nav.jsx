@@ -22,7 +22,6 @@ const Nav = (props) => {
   };
 
   useEffect(() => {
-    console.log(currentUser, "usuario");
     if (currentUser?.displayName) {
       setCurrentLink("/admin");
     }

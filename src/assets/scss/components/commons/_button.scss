@@ -2,15 +2,12 @@ button,
 a {
   border: 0;
   color: $color-white;
+  cursor: pointer;
   font-family: $font-primary;
   font-size: 14px;
   white-space: nowrap;
   max-width: 210px;
   text-decoration: none;
-
-  &.btn {
-    padding: 10px 15px;
-  }
 
   &.yellow {
     background-color: $color-primary;

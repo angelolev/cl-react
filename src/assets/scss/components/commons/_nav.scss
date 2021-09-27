@@ -67,12 +67,12 @@
           color: $color-blue-dark;
           display: flex;
           align-items: center;
-          transition: border 0.3s;
+          transition: all 0.3s;
 
           &:hover {
             box-shadow: none;
             padding-bottom: 5px;
-            border-bottom: 2px solid $color-blue-dark;
+            border-bottom: 1px solid $color-blue-dark;
             transition: border 0.3s;
           }
 

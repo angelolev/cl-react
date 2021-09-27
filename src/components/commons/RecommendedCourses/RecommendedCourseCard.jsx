@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const RecommendedCourseCard = (props) => {
   const { status, image, title, description, link, releaseDate } = props.course;
@@ -31,9 +32,9 @@ const RecommendedCourseCard = (props) => {
       </div>
       {status ? (
         <div className="recommended-courses__course-button">
-          <a className="yellow" href={link}>
+          <Link className="yellow" to={link}>
             Ir al Curso
-          </a>
+          </Link>
         </div>
       ) : (
         false
