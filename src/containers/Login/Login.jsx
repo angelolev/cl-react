@@ -1,23 +1,29 @@
-import React, { useEffect, useContext, useState } from "react";
-import { signIn } from "../../services/firebase";
-import { UserContext } from "../../providers/UserProvider";
+import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import Hero from "../../components/commons/Hero/Hero";
 import heroImage from "./student.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { signInFirebase } from "../../store/actions/auth";
 
 const Login = () => {
-  const user = useContext(UserContext);
-  const [redirect, setredirect] = useState(null);
+  const [redirect, setRedirect] = useState(null);
+  const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state.auth);
 
-  useEffect(() => {
-    if (user) {
-      setredirect("/clases");
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   console.log("entre");
+  //   if (currentUser) {
+  //     setRedirect("/clases");
+  //   }
+  // }, []);
 
-  if (redirect) {
-    return <Redirect to={redirect} />;
+  if (currentUser?.displayName) {
+    return <Redirect to="/clases" />;
   }
+
+  const handleLogin = (provider) => {
+    dispatch(signInFirebase(provider));
+  };
 
   return (
     <>
@@ -34,18 +40,14 @@ const Login = () => {
           </p>
           <button
             className="login__button google"
-            onClick={() => {
-              signIn("Google");
-            }}
+            onClick={() => handleLogin("Google")}
           >
             <span className="icon icon-google"></span>
             <span>Continuar con Google</span>
           </button>
           <button
             className="login__button github"
-            onClick={() => {
-              signIn("Github");
-            }}
+            onClick={() => handleLogin("Github")}
           >
             <span className="icon icon-github"></span>
             <span>Continuar con Github</span>

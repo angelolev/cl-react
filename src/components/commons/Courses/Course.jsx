@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import RelatedCourses from "./RelatedCourses";
 import CourseSession from "./CourseSession";
 import Modal from "react-modal";
-import FormSignUp from "../Forms/FormSignUp";
+// import FormSignUp from "../Forms/FormSignUp";
 import instructor from "./i-angelo.jpg";
 import bbva from "./bbva.jpg";
 import bcp from "./bcp.png";
@@ -58,7 +58,7 @@ const Course = (props) => {
             <div className="banner__content">
               <div className="course__image">
                 {/* <img src={courseImage} alt="" /> */}
-                <FormSignUp />
+                {/* <FormSignUp /> */}
                 {/* <a onClick={toggleModal}>Ver opciones de pago</a> */}
               </div>
               <div className="course__description">
@@ -151,12 +151,18 @@ const Course = (props) => {
                       <h3>1. Primeros pasos en WooCommerce</h3>
                     </div>
                     <div className="group__sessions">
-                      <CourseSession name="Presentación del curso" duration="01:00" />
+                      <CourseSession
+                        name="Presentación del curso"
+                        duration="01:00"
+                      />
                       <CourseSession
                         name="¿Qué es y por qué utilizar WooCommerce?"
                         duration="01:00"
                       />
-                      <CourseSession name="Instalando WooCommerce" duration="01:00" />
+                      <CourseSession
+                        name="Instalando WooCommerce"
+                        duration="01:00"
+                      />
                       <CourseSession
                         name="Entendiendo cómo funciona WooCommerce"
                         duration="01:00"
@@ -168,7 +174,10 @@ const Course = (props) => {
                       <h3>2. Gestión de productos</h3>
                     </div>
                     <div className="group__sessions">
-                      <CourseSession name="Creando productos" duration="01:00" />
+                      <CourseSession
+                        name="Creando productos"
+                        duration="01:00"
+                      />
                       <CourseSession
                         name="Creando un combo de productos"
                         duration="01:00"
@@ -250,7 +259,10 @@ const Course = (props) => {
                         name="Configurando distintos métodos de pago"
                         duration="01:00"
                       />
-                      <CourseSession name="Configurando Paypal" duration="01:00" />
+                      <CourseSession
+                        name="Configurando Paypal"
+                        duration="01:00"
+                      />
                       <CourseSession
                         name="Configurando Mercado Pago"
                         duration="01:00"

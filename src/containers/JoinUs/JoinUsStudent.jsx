@@ -1,9 +1,7 @@
 import React from "react";
 import Student from "../../components/join-us/JoinUsStudent";
 
-const JoinUsStudent = (props) => {
-  const { type } = props;
-
+const JoinUsStudent = () => {
   return (
     <div className="container">
       <section className="join">

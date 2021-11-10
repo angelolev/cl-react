@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Mentor from "../../components/join-us/JoinUsMentor";
 import discord from "../../components/join-us/discord.svg";
 import meeting from "../../components/join-us/meeting.svg";
 import time from "../../components/join-us/time.svg";
 
 const JoinUsMentor = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <section className="join">
       <div className="join__banner">

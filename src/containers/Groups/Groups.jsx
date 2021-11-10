@@ -1,57 +1,44 @@
-import React, { useState, useEffect } from "react";
-import CategoryGroups from "../../components/commons/CategoryGroup/CategoryGroup";
+import React, { useEffect } from "react";
+import CategoryFilter from "../../components/commons/Filters/CategoryFilter";
 import StudyGroup from "../../components/commons/StudyGroup/StudyGroup";
 import Hero from "../../components/commons/Hero/Hero";
 import groupsImage from "./study.png";
-import { db } from "../../services/firebase";
-import Loader from "../../components/loader/Loader";
+import Loader from "../../components/commons/Loader/Loader";
+import { useDispatch, useSelector } from "react-redux";
+import { getGroupsFirebase } from "../../services/groups-service";
+import { getCategoriesFirebase } from "../../services/categories-service";
 
 const Groups = () => {
-  const [categories, setCategories] = useState([]);
-  const [groups, setGroups] = useState([]);
+  const dispatch = useDispatch();
+  const groups = useSelector((state) => state.groups);
+  const categories = useSelector((state) => state.categories);
 
   useEffect(() => {
-    db.collection("categories")
-      .get()
-      .then((querySnapshot) => {
-        const loadedCategories = [];
-        querySnapshot.forEach((doc) => {
-          const currentDoc = doc.data();
-          currentDoc.id = doc.id;
-          loadedCategories.push(currentDoc);
-        });
-        setCategories(loadedCategories);
-      });
-
-    db.collection("groups")
-      .get()
-      .then((querySnapshot) => {
-        const loadedGroups = [];
-        querySnapshot.forEach((doc) => {
-          const currentDoc = doc.data();
-          currentDoc.id = doc.id;
-          loadedGroups.push(currentDoc);
-        });
-        setGroups(loadedGroups);
-      });
+    dispatch(getGroupsFirebase());
+    dispatch(getCategoriesFirebase());
   }, []);
 
+  const handleFilter = () => {
+    console.log("filtrando");
+  };
+
   return (
-    <div>
+    <div className="groups">
       <Hero
         title="Mejora tu aprendizaje con los grupos de estudio"
         image={groupsImage}
       />
 
-      <section className="groups-description">
-        {categories[0] ? null : <Loader />}
-        <ul className="groups-tags">
-          {categories.map((category) => {
-            return <CategoryGroups key={category.id} name={category.name} />;
-          })}
+      <section className="groups__description">
+        {categories?.categoriesList ? null : <Loader />}
+        <ul className="groups__tags">
+          <CategoryFilter
+            categories={categories?.categoriesList}
+            handleFilter={handleFilter}
+          />
         </ul>
-        <div className="groups-list">
-          {groups.map((group) => {
+        <div className="groups__list">
+          {groups.groupsList?.map((group) => {
             return <StudyGroup key={group.id} group={group} />;
           })}
         </div>

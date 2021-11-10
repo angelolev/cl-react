@@ -1,31 +1,13 @@
-import React, { useState, useEffect } from "react";
-import JoinUs from "../../components/landing/JoinUs";
+import React from "react";
+import JoinUs from "../../components/join-us/JoinUs";
 import Header from "../../components/commons/Header/Header";
 import RecommendedCourses from "../../components/commons/RecommendedCourses/RecommendedCourses";
-import { db } from "../../services/firebase";
 
 const Home = () => {
-  const [recommendedCourses, setRecommendedCourses] = useState([]);
-
-  useEffect(() => {
-    db.collection("recommendedCourses")
-      .orderBy("id")
-      .get()
-      .then((querySnapshot) => {
-        const loadedCourses = [];
-        querySnapshot.forEach((doc) => {
-          const currentDoc = doc.data();
-          currentDoc.id = doc.id;
-          loadedCourses.push(currentDoc);
-        });
-        setRecommendedCourses(loadedCourses);
-      });
-  }, []);
-
   return (
     <div>
       <Header />
-      <RecommendedCourses courses={recommendedCourses} />
+      <RecommendedCourses />
       <JoinUs />
     </div>
   );
