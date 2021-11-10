@@ -4,43 +4,45 @@ import Questions from "../commons/Questions/Questions";
 import Membership from "../dashboard/Membership/Membership";
 import { Link } from "react-router-dom";
 import Certification from "../dashboard/Certification/Certification";
-import { getLesson, addQuestionOnLesson } from "../../store/actions/lessons";
+import { getLesson } from "../../services/lessons-service";
+import {
+  addQuestionOnLesson,
+  getLessonQuestionsList,
+} from "../../services/questions-service";
+import { addLikeQuestion } from "../../services/likes-service";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import SessionVideoSkeleton from "../commons/Skeletons/SessionVideoSkeleton";
-import { db } from "../../services/firebase";
-import firebase from "firebase";
 import { generateId } from "../../utils";
 
 const SessionVideo = (props) => {
   const dispatch = useDispatch();
   const currentLesson = useSelector((state) => state.lessons.currentLesson);
+  const questions = useSelector((state) => state.questions.lessonQuestions);
+  const user = useSelector((state) => state.auth.uid);
   const lesson = currentLesson?.lesson;
-  const { group, id } = useParams();
-
-  const [questions, setQuestions] = useState([]);
+  const { group, lessonId } = useParams();
 
   useEffect(() => {
-    dispatch(getLesson(id));
+    dispatch(getLesson(lessonId));
+    dispatch(getLessonQuestionsList(lessonId));
+
     window.scrollTo(0, 0);
   }, []);
 
-  useEffect(() => {
-    setQuestions(lesson?.questions);
-  }, [lesson]);
-
   const handleLikeQuestion = (questionId) => {
-    const tempArray = questions.map((item) => {
-      if (item.id === questionId) {
-        item.likes = item.likes + 1;
+    // const newLike = {
+    //   uid: user,
+    //   enabled: true,
+    //   question_id: questionId,
+    //   description: "test",
+    // };
 
-        return item;
-      } else {
-        return item;
-      }
-    });
+    console.log("like", questionId);
+  };
 
-    setQuestions(tempArray);
+  const handleAddNewComment = () => {
+    console.log("comentar");
   };
 
   const handleAddNewQuestion = (questionTitle) => {
@@ -48,15 +50,10 @@ const SessionVideo = (props) => {
     const newQuestion = {
       id: questionId,
       title: questionTitle,
-      comments: [],
-      likes: 0,
+      lesson_id: lessonId,
     };
 
-    dispatch(addQuestionOnLesson(newQuestion, id));
-
-    const temporalQuestions = [...questions];
-    temporalQuestions.push(newQuestion);
-    setQuestions(temporalQuestions);
+    dispatch(addQuestionOnLesson(newQuestion));
   };
 
   return (
@@ -88,7 +85,7 @@ const SessionVideo = (props) => {
             </div>
             {lesson ? (
               <>
-                <Articles id={lesson?.id} />
+                <Articles lessonId={lessonId} />
               </>
             ) : null}
           </>
@@ -103,6 +100,7 @@ const SessionVideo = (props) => {
               questions={questions}
               addNewQuestion={handleAddNewQuestion}
               handleLikeQuestion={handleLikeQuestion}
+              handleAddNewComment={handleAddNewComment}
             />
           </>
         ) : (
@@ -110,7 +108,7 @@ const SessionVideo = (props) => {
         )}
 
         <Membership />
-        <Certification />
+        {/* <Certification /> */}
       </div>
     </section>
   );

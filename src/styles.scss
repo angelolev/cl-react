@@ -21,6 +21,7 @@
 @import "./assets/scss/components/announcements/announcement";
 @import "./assets/scss/components/calendar/calendar";
 @import "./assets/scss/components/questions/questions";
+@import "./assets/scss/components/questions/question-item";
 
 //Containers
 @import "./assets/scss/containers/login.scss";
@@ -41,7 +42,6 @@
 
 // Dashboard
 @import "./assets/scss/components/dashboard/dashboard";
-@import "./assets/scss/components/dashboard/articles";
 @import "./assets/scss/components/dashboard/announcements";
 @import "./assets/scss/components/dashboard/aside-navigation";
 @import "./assets/scss/components/dashboard/social-area";
@@ -61,6 +61,8 @@
 //Lessons
 @import "./assets/scss/components/lessons/lesson";
 @import "./assets/scss/components/lessons/lesson-video";
+@import "./assets/scss/components/lessons/lessons-resources";
+@import "./assets/scss/components/lessons/lesson-resource";
 
 //Admin
 @import "./assets/scss/components/admin/admin";

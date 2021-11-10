@@ -102,15 +102,65 @@ export const getFirebaseCollectionDataWithQueryAndOrder = (
     });
 };
 
-export const addQuestionOnLessonFirebase = async (question, id) => {
+export const getFirebaseCollectionDataWithQuery = (collection, query) => {
+  return db
+    .collection(collection)
+    .where(...query)
+    .get()
+    .then((querySnapshot) => {
+      const loadedData = [];
+      querySnapshot.forEach((doc) => {
+        const currentDoc = doc.data();
+        currentDoc.id = doc.id;
+        loadedData.push(currentDoc);
+      });
+
+      return loadedData;
+    });
+};
+
+// export const addQuestionOnLessonFirebase = async (question, id) => {
+//   const response = await db
+//     .collection("lessons")
+//     .doc(id)
+//     .update({
+//       questions: firebase.firestore.FieldValue.arrayUnion(question),
+//     })
+//     .then(() => {
+//       console.log("Pregunta agregada");
+//     });
+
+//   return response;
+// };
+
+export const addQuestionOnLessonFirebase = async (question) => {
   const response = await db
-    .collection("lessons")
-    .doc(id)
-    .update({
-      questions: firebase.firestore.FieldValue.arrayUnion(question),
-    })
+    .collection("questions")
+    .add(question)
     .then(() => {
       console.log("Pregunta agregada");
+    });
+
+  return response;
+};
+
+export const addCommentToQuestionFirebase = async (comment) => {
+  const response = await db
+    .collection("comments")
+    .add(comment)
+    .then(() => {
+      console.log("Comentario agregada");
+    });
+
+  return response;
+};
+
+export const addLikeQuestionFirebase = async (like) => {
+  const response = await db
+    .collection("likes")
+    .add(like)
+    .then(() => {
+      console.log("liked action");
     });
 
   return response;

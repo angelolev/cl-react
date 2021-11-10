@@ -9,4 +9,12 @@ export const types = {
   setLessonsCategories: "SET_LESSONS_CATEGORIES",
   addQuestion: "ADD_QUESTION",
   addQuestionLike: "ADD_LIKE_QUESTION",
+  getCurrentQuestion: "GET_QUESTION",
+  getLessonQuestions: "GET_LESSON_QUESTIONS",
+  addComment: "ADD_COMMENT",
+  getQuestionComments: "GET_QUESTION_COMMENTS",
+  getLessonQuestionsComments: "GET_LESSON_QUESTIONS_COMMENTS",
+  addLike: "ADD_LIKE",
+  getLessonQuestionsLikes: "GET_LESSON_QUESTIONS_LIKES",
+  getLessonResources: "GET_LESSON_RESOURCES",
 };

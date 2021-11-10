@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const JoinUs = () => (
   <div className="join-us" id="join">
@@ -35,9 +36,10 @@ const JoinUs = () => (
             Quieres compartir tu experiencia con nuevos entusiastas de la
             tecnología
           </p>
-          <a className="btn yellow" href="/mentor" rel="noopener noreferrer">
+
+          <Link className="btn yellow" to={"/mentor"}>
             Quiero ser mentor
-          </a>
+          </Link>
         </div>
       </div>
     </div>

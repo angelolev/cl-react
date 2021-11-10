@@ -15,9 +15,10 @@
       align-items: flex-start;
       flex-wrap: wrap;
 
-      button {
+      .btn {
         font-weight: normal;
         padding: 5px 15px;
+        font-weight: 600;
       }
 
       input {

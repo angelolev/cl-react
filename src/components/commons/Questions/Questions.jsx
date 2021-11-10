@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import Question from "./Question";
 import Button from "../../elements/Button/Button";
 import TextArea from "../../elements/TextArea/TextArea";
+import FormAddQuestion from "./FormAddQuestion";
 
-const Questions = ({ questions, addNewQuestion, handleLikeQuestion }) => {
+const Questions = ({
+  questions,
+  addNewQuestion,
+  handleLikeQuestion,
+  handleAddNewComment,
+}) => {
   const [newQuestion, setNewQuestion] = useState("");
 
-  const handleAddNewQuestion = (event) => {
-    event.preventDefault();
-    addNewQuestion(newQuestion);
+  const handleAddNewQuestion = (value) => {
+    addNewQuestion(value.question);
   };
 
   return (
@@ -18,25 +23,17 @@ const Questions = ({ questions, addNewQuestion, handleLikeQuestion }) => {
         <p>Tienes alguna duda? Déjala aquí:</p>
       </div>
       <div className="questions__form-new-question">
-        <form onSubmit={handleAddNewQuestion}>
-          <TextArea
-            name="question"
-            rows={5}
-            cols={50}
-            handleOnChange={(event) => setNewQuestion(event.target.value)}
-          />
-          <Button elementClass="btn yellow" elementText="Agregar" />
-        </form>
+        <FormAddQuestion addNewQuestion={handleAddNewQuestion} />
       </div>
       <div className="questions__list">
         {questions?.map((question) => {
           return (
             <Question
+              id={question.id}
               key={question.id}
               title={question.title}
-              comments={question.comments?.length}
-              likes={question.likes}
               handleLikeQuestion={() => handleLikeQuestion(question.id)}
+              handleAddNewComment={() => handleAddNewComment(question.id)}
             />
           );
         })}

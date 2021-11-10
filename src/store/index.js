@@ -6,6 +6,10 @@ import { recommendedCoursesReducer } from "./reducers/recommendedCourses-reducer
 import { groupsReducer } from "./reducers/groups";
 import { categoriesReducer } from "./reducers/categories";
 import { lessonsReducer } from "./reducers/lessons";
+import { questionsReducer } from "./reducers/questions";
+import { commentsReducer } from "./reducers/comments";
+import { likesReducer } from "./reducers/likes";
+import { resourcesReducer } from "./reducers/resources";
 
 const composeEnhancers =
   (typeof window !== "undefined" &&
@@ -18,6 +22,10 @@ const reducers = combineReducers({
   groups: groupsReducer,
   categories: categoriesReducer,
   lessons: lessonsReducer,
+  questions: questionsReducer,
+  comments: commentsReducer,
+  likes: likesReducer,
+  resources: resourcesReducer,
 });
 
 export const store = createStore(

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from "../../elements/Button/Button";
 
 const RecommendedCourseCard = (props) => {
   const { status, image, title, description, link, releaseDate } = props.course;

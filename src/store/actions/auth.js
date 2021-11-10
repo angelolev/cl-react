@@ -16,6 +16,7 @@ export const signInFirebase = (provider) => {
   return async (dispatch) => {
     const response = await auth.signInWithPopup(getCurrentProvider(provider));
     const { user } = response;
+    console.log(user, "gaaaa");
     dispatch(login(user.uid, user.displayName, user.photoURL));
   };
 };

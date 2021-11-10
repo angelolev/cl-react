@@ -13,6 +13,7 @@ import JoinUsStudent from "../containers/JoinUs/JoinUsStudent";
 import JoinUsMentor from "../containers/JoinUs/JoinUsMentor";
 import NotFound from "../containers/NotFound/NotFound";
 import Lessons from "../containers/Lessons/Lessons";
+import LessonQuestion from "../containers/Lessons/LessonsQuestion";
 
 import { PrivateRoute } from "./PrivateRoutes";
 import "../styles.scss";
@@ -68,8 +69,13 @@ const App = () => {
           <Route exact path="/clases" component={Lessons} />
           <Route
             exact
-            path="/clases/:group/:link/:id"
+            path="/clases/:group/:link/:lessonId"
             component={LessonVideo}
+          />
+          <Route
+            exact
+            path="/question/:questionId"
+            component={LessonQuestion}
           />
 
           <Route

@@ -6,9 +6,9 @@ import CategoryFilter from "../../components/commons/Filters/CategoryFilter";
 import heroImage from "../../components/lessons/studygroup.svg";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getLessonsFiltered,
   getLessonsFirebase,
-} from "../../store/actions/lessons";
+  getLessonsFiltered,
+} from "../../services/lessons-service";
 import { useParams } from "react-router";
 
 const Lessons = () => {

@@ -23,25 +23,6 @@ export const lessonsReducer = (state = INITIAL_STATE, action) => {
         lessonsCategories: action.payload,
       };
 
-    case types.addQuestion:
-      return {
-        currentLesson: {
-          ...state.currentLesson,
-          lesson: {
-            ...state.currentLesson.lesson,
-            questions: [
-              ...state.currentLesson.lesson.questions,
-              action.payload,
-            ],
-          },
-        },
-      };
-
-    case types.addQuestionLike:
-      return {
-        currentLesson: action.payload,
-      };
-
     default:
       return state;
   }
