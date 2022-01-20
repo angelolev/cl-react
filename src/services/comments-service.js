@@ -6,6 +6,7 @@ import {
 import {
   addCommentToQuestionFirebase,
   getFirebaseCollectionDataWithQueryAndOrder,
+  getFirebaseCollectionDataWithQuery,
 } from "./firebase";
 
 export const addCommentToQuestion = (comment) => {
@@ -28,11 +29,11 @@ export const getQuestionCommentsList = (questionId) => {
 
 export const getLessonQuestionCommentsList = (questionId) => {
   return async (dispatch) => {
-    const response = await getFirebaseCollectionDataWithQueryAndOrder(
-      "comments",
-      ["question_id", "==", questionId],
-      "description"
-    );
+    const response = await getFirebaseCollectionDataWithQuery("comments", [
+      "question_id",
+      "==",
+      questionId,
+    ]);
     dispatch(getLessonQuestionComments(response));
   };
 };

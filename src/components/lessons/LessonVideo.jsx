@@ -31,24 +31,14 @@ const SessionVideo = (props) => {
   }, []);
 
   const handleLikeQuestion = (questionId) => {
-    // const newLike = {
-    //   uid: user,
-    //   enabled: true,
-    //   question_id: questionId,
-    //   description: "test",
-    // };
-
     console.log("like", questionId);
   };
 
-  const handleAddNewComment = () => {
-    console.log("comentar");
-  };
-
   const handleAddNewQuestion = (questionTitle) => {
-    const questionId = generateId()();
+    // const questionId = generateId()();
     const newQuestion = {
-      id: questionId,
+      // id: questionId,
+      uid: user,
       title: questionTitle,
       lesson_id: lessonId,
     };
@@ -94,18 +84,17 @@ const SessionVideo = (props) => {
         )}
       </div>
       <div className="lesson__video-resources">
-        {lesson ? (
+        {/* {lesson ? (
           <>
             <Questions
               questions={questions}
               addNewQuestion={handleAddNewQuestion}
               handleLikeQuestion={handleLikeQuestion}
-              handleAddNewComment={handleAddNewComment}
             />
           </>
         ) : (
           <h3>Cargando</h3>
-        )}
+        )} */}
 
         <Membership />
         {/* <Certification /> */}
